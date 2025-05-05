@@ -1,68 +1,46 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Satoshi", "Inter", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Variable.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
 }
-a:hover {
-  color: #535bf2;
+
+@theme {
+  --color-yellow-50: oklch(0.98 0.0195 87.51);
+  --color-yellow-100: oklch(0.95 0.0535 88.36);
+  --color-yellow-200: oklch(0.9 0.1056 87.86);
+  --color-yellow-300: oklch(0.83 0.1532 81.16);
+  --color-yellow-400: oklch(0.8 0.1599 74.04);
+  --color-yellow-500: oklch(0.73 0.1699 59.06);
+  --color-yellow-600: oklch(0.63 0.1671 49.15);
+  --color-yellow-700: oklch(0.53 0.1572 41.4);
+  --color-yellow-800: oklch(0.45 0.1339 39.32);
+  --color-yellow-900: oklch(0.4 0.1122 39.22);
+  --color-yellow-950: oklch(0.27 0.0786 38.6);
+
+  --color-black-50: oklch(0.97 0 0);
+  --color-black-100: oklch(0.93 0 0);
+  --color-black-200: oklch(0.86 0 0);
+  --color-black-300: oklch(0.76 0 0);
+  --color-black-400: oklch(0.63 0 0);
+  --color-black-500: oklch(0.53 0 0);
+  --color-black-600: oklch(0.48 0 0);
+  --color-black-700: oklch(0.43 0 0);
+  --color-black-800: oklch(0.39 0 0);
+  --color-black-900: oklch(0.36 0 0);
+  --color-black-950: oklch(0.22 0 0);
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  background-color: var(--color-black-950);
+  color: var(--color-black-50);
 }
