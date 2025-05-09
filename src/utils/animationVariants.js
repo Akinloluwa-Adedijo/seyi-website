@@ -12,3 +12,17 @@ export const opacity = {
     transition: { duration: 0.5 },
   },
 };
+
+export const height = {
+  initial: {
+    height: 0,
+  },
+  enter: {
+    height: "auto",
+    transition,
+  },
+  exit: {
+    height: 0,
+    transition,
+  },
+};

@@ -1,9 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
-// import { opacity } from "../../utils/animationVariants.js";
+import { useMobile } from "../../hooks/use-mobile";
+// import { opacity } from "../../utils/animationVariants.tsx";
 
 const transition = { duration: 1, ease: [0.65, 0, 0.35, 1] };
+const opacity = {
+  initial: {
+    opacity: 0,
+  },
+  open: {
+    opacity: 1,
+    transition: { duration: 0.5 },
+  },
+  closed: {
+    opacity: 0,
+    transition: { duration: 0.5 },
+  },
+};
 
 const navLinks = [
   {
@@ -23,23 +37,7 @@ const navLinks = [
     href: "/contact",
   },
 ];
-export const opacity = {
-  initial: {
-    opacity: 0,
-  },
-  open: {
-    opacity: 1,
-    blur: 10,
-    transition: { duration: 0.5 },
-  },
-  closed: {
-    opacity: 0,
-    blur: 0,
-    transition: { duration: 0.5 },
-  },
-};
-
-export const height = {
+const height = {
   initial: {
     height: 0,
   },
@@ -61,7 +59,7 @@ const NavBottom: React.FC<NavBottomProps> = ({ isOpen, setIsOpen }) => {
   return (
     <>
       <motion.div
-        className="overflow-hidden bg-yellow-300 text-black"
+        className="sm:hidden  overflow-hidden bg-yellow-300 text-black "
         variants={height}
         initial="initial"
         animate="enter"
@@ -69,14 +67,15 @@ const NavBottom: React.FC<NavBottomProps> = ({ isOpen, setIsOpen }) => {
       >
         <div>
           <div className="flex flex-col items-center gap-5 p-5">
-            {navLinks.map((link) => (
-              <p
-                key={link.name}
+            {navLinks.map((link, index) => (
+              <Link
+                to={link.href}
+                key={index}
                 onClick={() => setIsOpen(false)}
                 className="text-3xl"
               >
                 {link.name}
-              </p>
+              </Link>
             ))}
           </div>
         </div>
@@ -87,31 +86,42 @@ const NavBottom: React.FC<NavBottomProps> = ({ isOpen, setIsOpen }) => {
 
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const isMobile = useMobile();
   return (
-    <header className="flex flex-col gap-5 p-5">
+    <header
+      className={`flex flex-col gap-5 p-5 fixed w-full ${
+        isMobile ? "bg-black-950" : "bg-transparent"
+      }`}
+    >
       <div className="flex justify-between items-center relative">
         <div>
-          <img
-            src="/seyi-logo.svg"
-            alt="Ṣèyí,ThePoet Logo"
-            height={40}
-            width={40}
-            className="w-10 h-10"
-          />
+          <Link to={"/"}>
+            <img
+              src="/seyi-logo.svg"
+              alt="Ṣèyí,ThePoet Logo"
+              height={40}
+              width={40}
+              className="w-10 h-10"
+            />
+          </Link>
         </div>
 
         <nav className="flex uppercase justify-between items-center">
-          <ul className="hidden sm:flex justify-between items-center gap-10">
-            <li>Music</li>
-            <li>OffStage</li>
-            <li>Updates</li>
-            <li>Contact</li>
+          <ul
+            className="hidden sm:flex justify-between items-center gap-10"
+            aria-hidden={isMobile ? "true" : "false"}
+          >
+            {navLinks.map((link, index) => (
+              <Link to={link.href} key={index} onClick={() => setIsOpen(false)}>
+                {link.name}
+              </Link>
+            ))}
           </ul>
 
           {/* Mobile COntrols */}
-          <ul>
+          <ul aria-hidden={!isMobile ? "true" : "false"}>
             <div
-              className="sm:hidden relaitive flex items-center h-full hover:cursor-pointer"
+              className="sm:hidden relative flex items-center h-full hover:cursor-pointer"
               onClick={() => setIsOpen(!isOpen)}
             >
               <motion.p
