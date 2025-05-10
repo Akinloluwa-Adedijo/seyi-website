@@ -88,11 +88,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const isMobile = useMobile();
   return (
-    <header
-      className={`flex flex-col gap-5 p-5 fixed w-full ${
-        isMobile ? "bg-black-950" : "bg-transparent"
-      }`}
-    >
+    <header className="flex flex-col gap-5 p-5 fixed w-full z-10">
       <div className="flex justify-between items-center relative">
         <div>
           <Link to={"/"}>
