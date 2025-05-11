@@ -8,7 +8,7 @@ const Home = () => {
     <main className="flex flex-col items-center gap-25">
       <LandingPage imgSrc="/seyi-landing.jpg" title="Șèyí,ThePoet" />
       <Description />
-      <section className=" flex flex-col gap-10 p-5">
+      <section className="flex flex-col gap-10 p-5">
         <h2 className="text-5xl uppercase font-bold">Music</h2>
         <MusicCard
           title="GODOT - A Performance of Self, Act 1"
