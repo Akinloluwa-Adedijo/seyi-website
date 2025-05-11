@@ -6,15 +6,20 @@ type MusicCardProps = {
   imgSrc: string;
   imgAlt: string;
   year: number;
+  size: string;
 };
-const MusicCard = ({ title, imgSrc, imgAlt, year }: MusicCardProps) => {
+const MusicCard = ({ title, imgSrc, imgAlt, year, size }: MusicCardProps) => {
   return (
     <div className="flex flex-col gap-5 relative">
       <a href="#">
         <div className="absolute top-5 left-5">
           <img className="w-10" src="/seyi-logo.svg" alt="Ṣèyí,ThePoet Logo" />
         </div>
-        <div className="max-h-[650px] overflow-hidden">
+        <div
+          className={`${
+            size === "sm" ? "max-h-[350px]" : "max-h-screen"
+          }  overflow-hidden`}
+        >
           <img src={imgSrc} alt={imgAlt} className="object-cover" />
         </div>
       </a>

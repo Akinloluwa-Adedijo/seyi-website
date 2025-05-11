@@ -63,13 +63,13 @@ const RenderLinks = ({ title, links }: RenderLinkProps) => {
 };
 const Footer = () => {
   return (
-    <footer className="flex flex-col gap-25 p-5 pt-25">
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+    <footer className="flex flex-col gap-25 p-5 pt-50">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
         <RenderLinks title="Navigation" links={navigationLinks} />
         <RenderLinks title="Contact" links={contactLinks} />
         <RenderLinks title="Listen" links={listenLinks} />
       </div>
-      <div className="flex flex-col items-end justify-between sm:flex-row text-yellow-300">
+      <div className="flex flex-col justify-between sm:flex-row text-yellow-300">
         <p className="text-[8vw] font-black uppercase">Șèyí,ThePoet</p>
         <p>@2025</p>
       </div>
