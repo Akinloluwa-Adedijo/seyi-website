@@ -1,6 +1,3 @@
-import { useScroll } from "motion/react";
-import React, { useRef } from "react";
-
 type MusicCardProps = {
   title: string;
   imgSrc: string;
@@ -24,8 +21,8 @@ const MusicCard = ({ title, imgSrc, imgAlt, year, size }: MusicCardProps) => {
         </div>
       </a>
       <div className="flex font-semibold justify-between">
-        <p className="w-[150px] sm:w-[350px] text-2xl">{title}</p>
-        <p className="text-2xl text-black-300">{year}</p>
+        <p className="w-[150px] sm:w-[350px] text-xl">{title}</p>
+        <p className="text-xl text-black-300">{year}</p>
       </div>
     </div>
   );

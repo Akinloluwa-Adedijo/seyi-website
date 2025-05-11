@@ -9,7 +9,7 @@ const UpdateCard = ({ title, imgSrc, imgAlt }: UpdateCardProps) => {
       <div className="max-h-[250px] overflow-hidden">
         <img src={imgSrc} alt={imgAlt} className="object-cover" />
       </div>
-      <div className="flex flex-col gap-1 text-2xl">
+      <div className="flex flex-col gap-1 text-xl">
         <p>{title}</p>
         <a
           href="#"

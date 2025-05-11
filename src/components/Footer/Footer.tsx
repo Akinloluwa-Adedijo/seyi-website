@@ -1,5 +1,3 @@
-import React from "react";
-
 const navigationLinks = [
   {
     name: "Music",
@@ -69,7 +67,7 @@ const Footer = () => {
         <RenderLinks title="Contact" links={contactLinks} />
         <RenderLinks title="Listen" links={listenLinks} />
       </div>
-      <div className="flex flex-col justify-between sm:flex-row text-yellow-300">
+      <div className="flex flex-col justify-between gap-5 sm:items-end sm:flex-row text-yellow-300">
         <p className="text-[8vw] font-black uppercase">Șèyí,ThePoet</p>
         <p>@2025</p>
       </div>
