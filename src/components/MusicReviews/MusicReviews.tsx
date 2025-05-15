@@ -1,4 +1,3 @@
-import React from "react";
 import type { ReviewItem } from "../../pages/OffStage/Offstage";
 
 const musicReviews: ReviewItem[] = [

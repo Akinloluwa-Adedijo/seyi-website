@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import type { ReviewItem } from "../../pages/OffStage/Offstage";
 
 interface ReviewModalProps {
