@@ -131,13 +131,16 @@ import { useState } from "react";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import MusicReviews from "../../components/MusicReviews/MusicReviews";
 import ReviewModal from "../../components/ReviewModal/ReviewModal";
+import Poems from "../../components/Poems/Poems";
 
 export interface ReviewItem {
   id: number;
-  album_name: string;
-  artist: string;
+  album_name?: string;
+  poem_name?: string;
+  artist?: string;
+  poem_theme?: string;
   released: number;
-  content: { src: string; text: string }[];
+  content: { src?: string; text: string[] }[];
   type: "music" | "poem";
 }
 
@@ -156,6 +159,12 @@ const Offstage = () => {
         <h3 className="text-3xl uppercase py-5">Music Reviews</h3>
         <div className="flex flex-col w-full">
           <MusicReviews onItemClick={handleItemClick} />
+        </div>
+      </div>
+      <div className="flex flex-col w-full items-center ">
+        <h3 className="text-3xl uppercase py-5">Poems</h3>
+        <div className="flex flex-col w-full">
+          <Poems onItemClick={handleItemClick} />
         </div>
       </div>
 

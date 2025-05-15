@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useState } from "react";
 import type { ReviewItem } from "../../pages/OffStage/Offstage";
 
 interface ReviewModalProps {
@@ -35,19 +34,19 @@ const ReviewModal = ({ isOpen, onClose, item }: ReviewModalProps) => {
         <button
           onClick={onClose}
           aria-label="Close Modal"
-          className="text-xl uppercase font-semibold cursor-pointer"
+          className="text-2xl uppercase font-semibold cursor-pointer"
         >
           Close
         </button>
 
         {/* content */}
         <div className="py-10">
-          <div>
-            <p className="text-4xl uppercase font-black py-2">
-              {item.album_name}
+          <div className="py-8">
+            <p className="text-7xl uppercase font-black py-2">
+              {item.album_name || item.poem_name}
             </p>
-            <div className="flex justify-between text-xl font-medium">
-              <p>{item.artist}</p>
+            <div className="flex justify-between uppercase text-xl font-semibold">
+              <p>{item.artist || item.poem_theme}</p>
               <p>{item.released}</p>
             </div>
           </div>
@@ -58,17 +57,36 @@ const ReviewModal = ({ isOpen, onClose, item }: ReviewModalProps) => {
                 {item.content.map((it, index) => {
                   return (
                     <div key={index}>
-                      <div>
-                        <img src={it.src} alt="alt text goes here" />
-                      </div>
-                      <div>{it.text}</div>
+                      <img src={it.src} alt="alt text goes here" />
+
+                      {it.text.map((text, index) => {
+                        return (
+                          <p key={index} className="py-2 font-medium">
+                            {text}
+                          </p>
+                        );
+                      })}
                     </div>
                   );
                 })}
               </div>
             ) : (
               <>
-                <p>this is an item</p>
+                <div>
+                  {item.content.map((it, index) => {
+                    return (
+                      <div key={index}>
+                        {it.text.map((text, index) => {
+                          return (
+                            <p key={index} className="py-1 font-medium">
+                              {text}
+                            </p>
+                          );
+                        })}
+                      </div>
+                    );
+                  })}
+                </div>
               </>
             )}
           </div>
