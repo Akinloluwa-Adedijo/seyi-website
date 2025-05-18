@@ -1,5 +1,3 @@
-import React from "react";
-
 interface publicationItem {
   title: string;
   imgSrc: string;
