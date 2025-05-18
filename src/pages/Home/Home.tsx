@@ -1,8 +1,7 @@
 import Description from "../../components/Description/Description";
 import LandingPage from "../../components/LandingPage/LandingPage";
 import MusicCard from "../../components/MusicCard/MusicCard";
-import UpdateCard from "../../components/UpdateCard/UpdateCard";
-import type { UpdateItem } from "../Updates/Updates";
+import Publications from "../../components/Publications/Publications";
 
 const Home = () => {
   return (
@@ -26,12 +25,10 @@ const Home = () => {
           size="sm"
         />
       </section>
-      {/* <section className=" flex flex-col gap-10 p-5"> */}
-      {/* <h2 className="text-5xl uppercase font-bold">Updates</h2> */}
-      {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"> */}
-      {/* <UpdateCard onItemClick={handleItemClick} /> */}
-      {/* </div> */}
-      {/* </section> */}
+      <section className="w-full flex flex-col gap-10 p-5">
+        <h2 className="text-5xl uppercase font-bold">Publications</h2>
+        <Publications />
+      </section>
     </main>
   );
 };

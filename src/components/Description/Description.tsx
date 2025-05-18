@@ -2,9 +2,8 @@ import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 
 const phrases = [
-  "Șèyí,ThePoet is a passionate spoken word artist, model and creative director; ",
-  "who brings raw emotion and profound insight to the stage His performances, rich with themes",
-  "of mental health and the human experience, have touched hearts and sparked conversations.",
+  "Șèyí,ThePoet is a passionate spoken word artist, model and creative director; who brings raw emotion and profound insight to the stage.",
+  "His performances, rich with themes of mental health and the human experience, have touched hearts and sparked conversations.",
 ];
 
 const MaskText = () => {

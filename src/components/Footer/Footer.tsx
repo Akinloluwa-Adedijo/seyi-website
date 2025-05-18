@@ -52,7 +52,7 @@ const RenderLinks = ({ title, links }: RenderLinkProps) => {
     <div className="flex flex-col gap-2 text-base uppercase font-semibold">
       <p className="font-normal text-gray-300">{title}</p>
       {links.map((link, index) => (
-        <a key={index} href={link.href} className="block">
+        <a key={index} href={link.href} className="hover:text-yellow-300">
           {link.name}
         </a>
       ))}
