@@ -15,14 +15,14 @@ const Home = () => {
           year={2025}
           imgSrc="/seyi-landing.jpg"
           imgAlt="Alt image goes here"
-          size="sm"
+          size="big"
         />
         <MusicCard
           title="GODOT"
           year={2025}
           imgSrc="/seyi-landing.jpg"
           imgAlt="Alt image goes here"
-          size="sm"
+          size="big"
         />
       </section>
       <section className="w-full flex flex-col gap-10 p-5">

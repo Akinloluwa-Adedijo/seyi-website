@@ -1,4 +1,3 @@
-import React from "react";
 import type { UpdateItem } from "../../pages/Updates/Updates";
 import { useEffect } from "react";
 interface UpdateModalProps {
@@ -48,7 +47,7 @@ const UpdateModal = ({ isOpen, onClose, updateItem }: UpdateModalProps) => {
           </div>
           <div>
             {updateItem.images.map((img, index) => {
-              return <img src={img.imgSrc} alt={img.imgAlt} />;
+              return <img src={img.imgSrc} alt={img.imgAlt} key={index} />;
             })}
           </div>
           {updateItem.href && (

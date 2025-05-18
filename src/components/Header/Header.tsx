@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
 import { useMobile } from "../../hooks/use-mobile";
-// import { opacity } from "../../utils/animationVariants.tsx";
 import { useEffect } from "react";
 
 const transition = { duration: 1, ease: [0.65, 0, 0.35, 1] };
