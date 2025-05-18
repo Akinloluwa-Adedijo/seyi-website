@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
 import { useMobile } from "../../hooks/use-mobile";
 // import { opacity } from "../../utils/animationVariants.tsx";
+import { useEffect } from "react";
 
 const transition = { duration: 1, ease: [0.65, 0, 0.35, 1] };
 const opacity = {
@@ -16,6 +17,20 @@ const opacity = {
   closed: {
     opacity: 0,
     transition: { duration: 0.5 },
+  },
+};
+
+const navBackground = {
+  initial: {
+    height: 0,
+  },
+  open: {
+    height: "100vh",
+    transition,
+  },
+  closed: {
+    height: 0,
+    transition,
   },
 };
 
@@ -56,6 +71,21 @@ interface NavBottomProps {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const NavBottom: React.FC<NavBottomProps> = ({ isOpen, setIsOpen }) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
+  if (!isOpen) {
+    return null; // Don't render anything if the menu is closed
+  }
   return (
     <>
       <motion.div
@@ -88,8 +118,8 @@ const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const isMobile = useMobile();
   return (
-    <header className="flex flex-col gap-5 p-5 fixed w-full z-10">
-      <div className="flex justify-between items-center relative">
+    <header className="flex flex-col   fixed w-full z-10">
+      <div className="flex justify-between items-center py-5 px-5 relative backdrop-blur-xl">
         <div>
           <Link to={"/"}>
             <img
@@ -108,13 +138,18 @@ const Header = () => {
             aria-hidden={isMobile ? "true" : "false"}
           >
             {navLinks.map((link, index) => (
-              <Link to={link.href} key={index} onClick={() => setIsOpen(false)}>
+              <Link
+                to={link.href}
+                key={index}
+                onClick={() => setIsOpen(false)}
+                className="hover:text-yellow-300"
+              >
                 {link.name}
               </Link>
             ))}
           </ul>
 
-          {/* Mobile COntrols */}
+          {/* Mobile Controls */}
           <ul aria-hidden={!isMobile ? "true" : "false"}>
             <div
               className="sm:hidden relative flex items-center h-full hover:cursor-pointer"
@@ -140,6 +175,13 @@ const Header = () => {
       <AnimatePresence mode="wait">
         {isOpen && <NavBottom isOpen={isOpen} setIsOpen={setIsOpen} />}
       </AnimatePresence>
+
+      <motion.div
+        className="absolute bg-white h-full w-full left-0 top-[100%]"
+        variants={navBackground}
+        initial="initial"
+        animate={isOpen ? "open" : "closed"}
+      ></motion.div>
     </header>
   );
 };
