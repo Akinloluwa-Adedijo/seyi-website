@@ -36,7 +36,7 @@ const LandingPage = ({ title, imgSrc }: LandingPageProps) => {
     gsap.set(firstText.current, { xPercent: xPercent });
     gsap.set(secondText.current, { xPercent: xPercent });
     requestAnimationFrame(animate);
-    xPercent += 0.1;
+    xPercent += 0.1 * direction;
   };
   return (
     <section className="relative flex flex-col min-h-screen max-h-full overflow-hidden">
