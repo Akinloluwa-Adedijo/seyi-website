@@ -34,7 +34,7 @@ const ReviewModal = ({ isOpen, onClose, item }: ReviewModalProps) => {
         <button
           onClick={onClose}
           aria-label="Close Modal"
-          className="text-2xl uppercase font-semibold cursor-pointer"
+          className="text-xl uppercase font-medium cursor-pointer hover:text-black-800"
         >
           Close
         </button>
@@ -45,7 +45,7 @@ const ReviewModal = ({ isOpen, onClose, item }: ReviewModalProps) => {
             <p className="text-7xl uppercase font-black py-2">
               {item.album_name || item.poem_name}
             </p>
-            <div className="flex justify-between uppercase text-xl font-semibold">
+            <div className="flex justify-between uppercase  font-medium">
               <p>{item.artist || item.poem_theme}</p>
               <p>{item.released}</p>
             </div>
@@ -57,7 +57,12 @@ const ReviewModal = ({ isOpen, onClose, item }: ReviewModalProps) => {
                 {item.content.map((it, index) => {
                   return (
                     <div key={index}>
-                      <img src={it.src} alt="alt text goes here" />
+                      <img
+                        src={it.src}
+                        alt="alt text goes here"
+                        className="w-full object-cover rounded-lg"
+                        loading="lazy"
+                      />
 
                       {it.text.map((text, index) => {
                         return (
@@ -78,7 +83,7 @@ const ReviewModal = ({ isOpen, onClose, item }: ReviewModalProps) => {
                       <div key={index}>
                         {it.text.map((text, index) => {
                           return (
-                            <p key={index} className="py-1 font-medium">
+                            <p key={index} className="py-2 font-medium">
                               {text}
                             </p>
                           );
