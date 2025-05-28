@@ -118,7 +118,7 @@ const Header = () => {
   const isMobile = useMobile();
   return (
     <header className="flex flex-col   fixed w-full z-10">
-      <div className="flex justify-between items-center py-5 px-5 relative backdrop-blur-xl">
+      <div className="flex justify-between items-center py-5 px-5 relative backdrop-blur-sm">
         <div>
           <Link to={"/"}>
             <img

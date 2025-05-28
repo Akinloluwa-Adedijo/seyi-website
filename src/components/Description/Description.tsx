@@ -29,7 +29,7 @@ const MaskText = () => {
         return (
           <div
             key={index}
-            className="text-[3vw] text-yellow-300 m-0 font-medium overflow-hidden"
+            className="text-[5vw] text-yellow-300 m-0 font-medium text-center overflow-hidden"
           >
             <motion.p
               custom={index}
