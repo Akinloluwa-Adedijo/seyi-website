@@ -1,3 +1,6 @@
+import { motion, useScroll, useSpring, useTransform } from "motion/react";
+import type React from "react";
+
 type MusicCardProps = {
   title: string;
   imgSrc: string;
@@ -5,12 +8,36 @@ type MusicCardProps = {
   year: number;
   size: string;
 };
-const MusicCard = ({ title, imgSrc, imgAlt, year, size }: MusicCardProps) => {
+const MusicCard: React.FC<MusicCardProps> = ({
+  title,
+  imgSrc,
+  imgAlt,
+  year,
+  size,
+}) => {
+  // Get the scroll progress (0 to 1)
+  const { scrollYProgress } = useScroll();
+
+  //Map the scroll progress to a rotation value (0 to 360 degrees)
+  const rotate = useTransform(
+    useSpring(scrollYProgress, {
+      stiffness: 100,
+      damping: 30,
+      restDelta: 0.001,
+    }),
+    [0, 1],
+    [0, 360]
+  );
   return (
     <div className="flex flex-col gap-2 relative">
       <a href="#">
         <div className="absolute top-5 left-5">
-          <img className="w-10" src="/seyi-logo.svg" alt="Ṣèyí,ThePoet Logo" />
+          <motion.img
+            className="w-10"
+            src="/seyi-logo.svg"
+            alt="Ṣèyí,ThePoet Logo"
+            style={{ rotate }}
+          />
         </div>
         <div
           className={`${

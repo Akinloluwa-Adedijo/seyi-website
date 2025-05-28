@@ -1,6 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { AnimatePresence, motion } from "motion/react";
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+} from "motion/react";
 import { useMobile } from "../../hooks/use-mobile";
 import { useEffect } from "react";
 
@@ -85,6 +91,7 @@ const NavBottom: React.FC<NavBottomProps> = ({ isOpen, setIsOpen }) => {
   if (!isOpen) {
     return null; // Don't render anything if the menu is closed
   }
+
   return (
     <>
       <motion.div
@@ -116,17 +123,32 @@ const NavBottom: React.FC<NavBottomProps> = ({ isOpen, setIsOpen }) => {
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const isMobile = useMobile();
+
+  // Get the scroll progress (0 to 1)
+  const { scrollYProgress } = useScroll();
+
+  //Map the scroll progress to a rotation value (0 to 360 degrees)
+  const rotate = useTransform(
+    useSpring(scrollYProgress, {
+      stiffness: 100,
+      damping: 30,
+      restDelta: 0.001,
+    }),
+    [0, 1],
+    [0, 360]
+  );
   return (
     <header className="flex flex-col   fixed w-full z-10">
       <div className="flex justify-between items-center py-5 px-5 relative backdrop-blur-sm">
         <div>
           <Link to={"/"}>
-            <img
+            <motion.img
               src="/seyi-logo.svg"
               alt="Ṣèyí,ThePoet Logo"
               height={40}
               width={40}
               className="w-10 h-10"
+              style={{ rotate }}
             />
           </Link>
         </div>
