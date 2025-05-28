@@ -27,7 +27,7 @@ const ReviewModal = ({ isOpen, onClose, item }: ReviewModalProps) => {
   return (
     <section className="fixed inset-0 z-50 flex items-center justify-center p-5">
       {/* backdrop */}
-      <div className="absolute inset-0 backdrop-blur-sm " onClick={onClose} />
+      <div className="absolute inset-0 backdrop-blur-sm" onClick={onClose} />
 
       {/* modal */}
       <div className="relative bg-yellow-300  rounded-lg w-full max-w-2xl max-h-[80vh] overflow-auto z-10 p-5 text-black">

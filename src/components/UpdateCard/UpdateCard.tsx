@@ -7,7 +7,7 @@ interface UpdateCardProps {
 const updatesData: UpdateItem[] = [
   {
     id: 1,
-    title: "PERFORMANCE AT TALK WITH SOSA: A MENTAL HEALTH CONFERENCE",
+    title: "Performance at talk with sosa: A mental health conference",
     cover: "/seyi-landing.jpg",
     coverAlt: "alt text goes here",
     content: [

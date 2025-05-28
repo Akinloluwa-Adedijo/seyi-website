@@ -32,7 +32,7 @@ const UpdateModal = ({ isOpen, onClose, updateItem }: UpdateModalProps) => {
         <button
           onClick={onClose}
           aria-label="Close Modal"
-          className="text-2xl uppercase font-semibold cursor-pointer"
+          className="text-xl uppercase font-medium cursor-pointer hover:text-black-800"
         >
           Close
         </button>
@@ -47,7 +47,15 @@ const UpdateModal = ({ isOpen, onClose, updateItem }: UpdateModalProps) => {
           </div>
           <div>
             {updateItem.images.map((img, index) => {
-              return <img src={img.imgSrc} alt={img.imgAlt} key={index} />;
+              return (
+                <img
+                  src={img.imgSrc}
+                  alt={img.imgAlt}
+                  key={index}
+                  className="w-full object-cover rounded-lg"
+                  loading="lazy"
+                />
+              );
             })}
           </div>
           {updateItem.href && (
