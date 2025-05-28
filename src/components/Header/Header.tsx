@@ -130,8 +130,8 @@ const Header = () => {
   //Map the scroll progress to a rotation value (0 to 360 degrees)
   const rotate = useTransform(
     useSpring(scrollYProgress, {
-      stiffness: 100,
-      damping: 30,
+      stiffness: 50,
+      damping: 20,
       restDelta: 0.001,
     }),
     [0, 1],
