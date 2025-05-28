@@ -42,7 +42,7 @@ const PublicationCard = ({ publication }: { publication: publicationItem }) => {
             className="object-cover w-full"
           />
         </div>
-        <div className="flex flex-col gap-1 text-xl">
+        <div className="flex flex-col gap-[2px] text-xl">
           <p>{publication.title}</p>
           <a
             href={publication.href}
@@ -50,7 +50,7 @@ const PublicationCard = ({ publication }: { publication: publicationItem }) => {
             rel="noopener noreferrer"
             className="underline hover:no-underline text-black-300 hover:text-black-50 transition-colors ease-in-out duration-200"
           >
-            Read more
+            View
           </a>
         </div>
       </div>

@@ -79,7 +79,7 @@ const UpdateCard = ({ onItemClick }: UpdateCardProps) => {
                 href="#"
                 className="underline hover:no-underline text-black-300 hover:text-black-50 transition-colors ease-in-out duration-200"
               >
-                Read more
+                View Details
               </a>
             </div>
           </div>

@@ -149,13 +149,13 @@ const Poems = ({ onItemClick }: MusicReviewsProps) => {
       {poems.map((review) => {
         return (
           <ul
-            className="grid grid-cols-3 sm:grid-cols-4 w-full border-t-2 border-yellow-300 uppercase pt-3 pb-3 gap-5 font-semibold hover:bg-yellow-300 hover:text-black transition-colors duration-300 ease-in hover:cursor-pointer"
+            className="grid grid-cols-3 sm:grid-cols-4 w-full border-t-2 border-yellow-300 uppercase p-2 gap-5 hover:bg-yellow-300 hover:text-black transition-colors duration-300 ease-in hover:cursor-pointer"
             onClick={() => onItemClick(review)}
           >
             <li>{review.poem_name}</li>
             <li>{review.poem_theme}</li>
             <li>{review.released}</li>
-            <li>Read more</li>
+            <li>Read Poem</li>
           </ul>
         );
       })}

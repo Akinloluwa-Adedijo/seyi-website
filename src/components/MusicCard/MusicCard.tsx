@@ -7,7 +7,7 @@ type MusicCardProps = {
 };
 const MusicCard = ({ title, imgSrc, imgAlt, year, size }: MusicCardProps) => {
   return (
-    <div className="flex flex-col gap-5 relative">
+    <div className="flex flex-col gap-2 relative">
       <a href="#">
         <div className="absolute top-5 left-5">
           <img className="w-10" src="/seyi-logo.svg" alt="Ṣèyí,ThePoet Logo" />
