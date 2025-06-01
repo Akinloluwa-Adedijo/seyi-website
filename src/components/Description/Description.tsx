@@ -8,7 +8,7 @@ const phrases = [
 
 const MaskText = () => {
   const body = useRef(null);
-  const isInView = useInView(body, { once: true, margin: "-75%" });
+  const isInView = useInView(body, { once: true, margin: "-5%" });
 
   const animation = {
     initial: { y: "100%" },
@@ -29,13 +29,13 @@ const MaskText = () => {
         return (
           <div
             key={index}
-            className="text-[5vw] sm:text-[3vw] m-0 font-medium text-center overflow-hidden"
+            className="text-3xl sm:text-[5vw] m-0 font-medium text-center overflow-hidden"
           >
             <motion.p
               custom={index}
               variants={animation}
               initial="initial"
-              animate={isInView ? "enter" : ""}
+              animate={isInView ? "enter" : "initial"}
             >
               {phrase}
             </motion.p>
