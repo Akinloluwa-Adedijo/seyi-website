@@ -138,8 +138,8 @@ const Header = () => {
     [0, 360]
   );
   return (
-    <header className="flex flex-col   fixed w-full z-10">
-      <div className="flex justify-between items-center py-5 px-5 relative backdrop-blur-sm">
+    <header className="flex flex-col fixed w-full z-10">
+      <div className="flex justify-between items-center py-5 px-5  backdrop-blur-sm">
         <div>
           <Link to={"/"}>
             <motion.img

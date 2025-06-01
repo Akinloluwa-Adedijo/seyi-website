@@ -5,11 +5,11 @@ import Publications from "../../components/Publications/Publications";
 
 const Home = () => {
   return (
-    <main className="flex flex-col items-center gap-25">
+    <main className="flex flex-col items-center gap-20 overflow-hidden">
       <LandingPage imgSrc="/seyi-landing.jpg" title="Șèyí,ThePoet" />
       <Description />
       <section className="flex flex-col gap-10 p-5">
-        <h2 className="text-5xl uppercase font-bold">Music</h2>
+        <h2 className="text-4xl uppercase font-bold text-center">Music</h2>
         <MusicCard
           title="GODOT - A Performance of Self, Act 1"
           year={2025}
@@ -26,7 +26,9 @@ const Home = () => {
         />
       </section>
       <section className="w-full flex flex-col gap-10 p-5">
-        <h2 className="text-5xl uppercase font-bold">Publications</h2>
+        <h2 className="text-4xl uppercase font-bold text-center">
+          Publications
+        </h2>
         <Publications />
       </section>
     </main>
