@@ -32,7 +32,7 @@ const UpdateModal = ({ isOpen, onClose, updateItem }: UpdateModalProps) => {
         <button
           onClick={onClose}
           aria-label="Close Modal"
-          className="text-xl uppercase font-medium cursor-pointer hover:text-black-800"
+          className="text-lg uppercase font-medium cursor-pointer hover:text-black-800"
         >
           Close
         </button>
@@ -40,7 +40,7 @@ const UpdateModal = ({ isOpen, onClose, updateItem }: UpdateModalProps) => {
         {/* content */}
         <div className="py-10">
           <div className="py-8">
-            <p className="text-5xl uppercase font-black py-2">
+            <p className="text-[10vw] uppercase font-black py-2">
               {updateItem.title}
             </p>
             <p>{updateItem.content}</p>

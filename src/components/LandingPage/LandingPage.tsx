@@ -1,7 +1,3 @@
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
-import { useEffect, useRef } from "react";
-
 type LandingPageProps = {
   title: string;
   imgSrc: string;
@@ -9,7 +5,7 @@ type LandingPageProps = {
 const LandingPage = ({ title, imgSrc }: LandingPageProps) => {
   return (
     <section className="relative flex flex-col gap-5 min-h-screen max-h-full overflow-hidden pt-30">
-      <h1 className="text-4xl sm:text-[10vw] font-black uppercase px-5 text-center">
+      <h1 className="text-4xl sm:text-[10vw] text-yellow-300 font-black uppercase px-5 text-center">
         {title}
       </h1>
       <div className="max-h-[110vh]">

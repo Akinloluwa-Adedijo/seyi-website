@@ -9,7 +9,7 @@ const Home = () => {
       <LandingPage imgSrc="/seyi-landing.jpg" title="Șèyí,ThePoet" />
       <Description />
       <section className="flex flex-col gap-10 p-5">
-        <h2 className="text-4xl uppercase font-bold text-center">Music</h2>
+        <h2 className="text-4xl uppercase font-medium text-center">Music</h2>
         <MusicCard
           title="GODOT - A Performance of Self, Act 1"
           year={2025}
@@ -26,7 +26,7 @@ const Home = () => {
         />
       </section>
       <section className="w-full flex flex-col gap-10 p-5">
-        <h2 className="text-4xl uppercase font-bold text-center">
+        <h2 className="text-4xl uppercase font-medium text-center">
           Publications
         </h2>
         <Publications />

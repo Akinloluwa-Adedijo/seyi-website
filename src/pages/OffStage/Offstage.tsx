@@ -27,7 +27,7 @@ const Offstage = () => {
   return (
     <SectionWrapper title="Offstage">
       <div className="flex flex-col w-full items-center ">
-        <h3 className="text-3xl sm:text-4xl uppercase py-5 font-bold">
+        <h3 className="text-3xl sm:text-4xl uppercase py-5 font-medium">
           Music Reviews
         </h3>
         <div className="flex flex-col w-full">
@@ -35,7 +35,9 @@ const Offstage = () => {
         </div>
       </div>
       <div className="flex flex-col w-full items-center ">
-        <h3 className="text-3xl sm:text-4xl uppercase py-5 font-bold">Poems</h3>
+        <h3 className="text-3xl sm:text-4xl uppercase py-5 font-medium">
+          Poems
+        </h3>
         <div className="flex flex-col w-full">
           <Poems onItemClick={handleItemClick} />
         </div>

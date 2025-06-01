@@ -47,7 +47,7 @@ const MusicCard: React.FC<MusicCardProps> = ({
           <img src={imgSrc} alt={imgAlt} className="object-cover" />
         </div>
       </a>
-      <div className="flex font-semibold justify-between">
+      <div className="flex font-medium justify-between">
         <p className="w-[150px] sm:w-[350px] text-xl">{title}</p>
         <p className="text-xl text-black-300">{year}</p>
       </div>

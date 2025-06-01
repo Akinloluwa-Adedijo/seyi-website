@@ -6,8 +6,8 @@ type SectionWrapperProps = {
 };
 const SectionWrapper = ({ title, children }: SectionWrapperProps) => {
   return (
-    <section className="flex flex-col items-center gap-15 p-5 pt-30">
-      <h2 className="text-5xl sm:text-7xl text-yellow-300 uppercase font-black">
+    <section className="flex flex-col items-center gap-10 p-5 pt-30">
+      <h2 className="text-4xl sm:text-[10vw] text-yellow-300 uppercase font-black">
         {title}
       </h2>
       {children}

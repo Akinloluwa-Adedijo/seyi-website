@@ -34,7 +34,7 @@ const ReviewModal = ({ isOpen, onClose, item }: ReviewModalProps) => {
         <button
           onClick={onClose}
           aria-label="Close Modal"
-          className="text-xl uppercase font-medium cursor-pointer hover:text-black-800"
+          className="text-lg uppercase font-medium cursor-pointer hover:text-black-800"
         >
           Close
         </button>
@@ -42,7 +42,7 @@ const ReviewModal = ({ isOpen, onClose, item }: ReviewModalProps) => {
         {/* content */}
         <div className="py-10">
           <div className="py-8">
-            <p className="text-7xl uppercase font-black py-2">
+            <p className="text-[10vw] uppercase font-black py-2">
               {item.album_name || item.poem_name}
             </p>
             <div className="flex justify-between uppercase  font-medium">
