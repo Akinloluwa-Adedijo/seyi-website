@@ -1,4 +1,4 @@
-// import Description from "../../components/Description/Description";
+import Description from "../../components/Description/Description";
 import LandingPage from "../../components/LandingPage/LandingPage";
 import MusicCard from "../../components/MusicCard/MusicCard";
 import Publications from "../../components/Publications/Publications";
@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <main className="flex flex-col items-center gap-20 overflow-hidden">
       <LandingPage imgSrc="/seyi-landing.jpg" title="Șèyí,ThePoet" />
-      {/* <Description /> */}
+      <Description />
       <section className="flex flex-col gap-10 p-5">
         <h2 className="text-4xl uppercase font-medium text-center">Music</h2>
         <MusicCard
