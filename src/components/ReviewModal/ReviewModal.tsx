@@ -42,7 +42,7 @@ const ReviewModal = ({ isOpen, onClose, item }: ReviewModalProps) => {
         {/* content */}
         <div className="py-10">
           <div className="py-8">
-            <p className="text-[10vw] uppercase font-black py-2">
+            <p className="text-4xl sm:text-7xl uppercase font-black py-2">
               {item.album_name || item.poem_name}
             </p>
             <div className="flex justify-between uppercase  font-medium">

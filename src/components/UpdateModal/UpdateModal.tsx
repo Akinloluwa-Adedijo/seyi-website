@@ -40,7 +40,7 @@ const UpdateModal = ({ isOpen, onClose, updateItem }: UpdateModalProps) => {
         {/* content */}
         <div className="py-10">
           <div className="py-8">
-            <p className="text-[10vw] uppercase font-black py-2">
+            <p className="text-4xl sm:text-7xl uppercase font-black py-2">
               {updateItem.title}
             </p>
             <p>{updateItem.content}</p>
