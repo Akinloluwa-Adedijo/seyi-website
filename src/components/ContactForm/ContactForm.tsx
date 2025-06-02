@@ -96,7 +96,7 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full sm:max-w-3xl mx-auto p-5 bg-black-50 rounded-lg "
+      className="w-full sm:max-w-4xl mx-auto p-5 bg-black-50 rounded-xl "
     >
       {/* First Name and Last Name */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
