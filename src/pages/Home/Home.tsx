@@ -1,6 +1,7 @@
 import Description from "../../components/Description/Description";
 import LandingPage from "../../components/LandingPage/LandingPage";
 import MusicCard from "../../components/MusicCard/MusicCard";
+
 import Publications from "../../components/Publications/Publications";
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
           imgAlt="Alt image goes here"
           size="big"
         />
+
         <MusicCard
           title="GODOT"
           year={2025}

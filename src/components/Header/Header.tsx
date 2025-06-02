@@ -155,7 +155,7 @@ const Header = () => {
 
         <nav className="flex uppercase justify-between items-center">
           <ul
-            className="hidden sm:flex justify-between items-center gap-10"
+            className="hidden sm:flex justify-between items-center gap-15"
             aria-hidden={isMobile ? "true" : "false"}
           >
             {navLinks.map((link, index) => (
@@ -197,12 +197,14 @@ const Header = () => {
         {isOpen && <NavBottom isOpen={isOpen} setIsOpen={setIsOpen} />}
       </AnimatePresence>
 
-      <motion.div
-        className="absolute bg-white h-full w-full left-0 top-[100%]"
-        variants={navBackground}
-        initial="initial"
-        animate={isOpen ? "open" : "closed"}
-      ></motion.div>
+      {isMobile && (
+        <motion.div
+          className="absolute bg-white h-full w-full left-0 top-[100%]"
+          variants={navBackground}
+          initial="initial"
+          animate={isOpen ? "open" : "closed"}
+        ></motion.div>
+      )}
     </header>
   );
 };
