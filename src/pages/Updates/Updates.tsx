@@ -8,7 +8,16 @@ export interface UpdateItem {
   title: string;
   cover: string;
   coverAlt: string;
-  images: { imgSrc?: string; imgAlt?: string }[];
+  coverWidth: number;
+  coverHeight: number;
+  coverClassname?: string;
+  images?: {
+    imgSrc: string;
+    imgAlt: string;
+    imgWidth: number;
+    imgHeight: number;
+    imgClassname: string;
+  }[];
   content: string[];
   href?: string;
 }

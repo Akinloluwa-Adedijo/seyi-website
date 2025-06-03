@@ -1,5 +1,6 @@
 import type { UpdateItem } from "../../pages/Updates/Updates";
 import { useEffect } from "react";
+import CustomImage from "../CustomImage/CustomImage";
 interface UpdateModalProps {
   isOpen: Boolean;
   onClose: () => void;
@@ -45,16 +46,19 @@ const UpdateModal = ({ isOpen, onClose, updateItem }: UpdateModalProps) => {
             </p>
             <p>{updateItem.content}</p>
           </div>
-          <div>
-            {updateItem.images.map((img, index) => {
+          <div className="flex flex-col gap-5">
+            {updateItem.images?.map((img, index) => {
               return (
-                <img
-                  src={img.imgSrc}
-                  alt={img.imgAlt}
-                  key={index}
-                  className="w-full object-cover rounded-lg"
-                  loading="lazy"
-                />
+                <>
+                  <CustomImage
+                    key={index}
+                    imgSrc={img.imgSrc}
+                    imgAlt={img.imgAlt}
+                    width={img.imgWidth}
+                    height={img.imgHeight}
+                    classname={img.imgClassname}
+                  />
+                </>
               );
             })}
           </div>
