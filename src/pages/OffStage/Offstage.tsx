@@ -11,7 +11,14 @@ export interface ReviewItem {
   artist?: string;
   poem_theme?: string;
   released: number;
-  content: { src?: string; text: string[] }[];
+  content: {
+    imgSrc?: string;
+    imgAlt?: string;
+    width?: number;
+    height?: number;
+    classname?: string;
+    text: string[];
+  }[];
   type: "music" | "poem";
 }
 

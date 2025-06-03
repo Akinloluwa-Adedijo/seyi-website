@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import type { ReviewItem } from "../../pages/OffStage/Offstage";
+import CustomImage from "../CustomImage/CustomImage";
 
 interface ReviewModalProps {
   isOpen: Boolean;
@@ -57,11 +58,18 @@ const ReviewModal = ({ isOpen, onClose, item }: ReviewModalProps) => {
                 {item.content.map((it, index) => {
                   return (
                     <div key={index}>
-                      <img
-                        src={it.src}
+                      {/* <img
+                        src={it.imgSrc}
                         alt="alt text goes here"
                         className="w-full object-cover rounded-lg"
                         loading="lazy"
+                      /> */}
+                      <CustomImage
+                        imgSrc={it.imgSrc ?? ""}
+                        imgAlt={it.imgAlt ?? ""}
+                        width={it.width ?? 0}
+                        height={it.height ?? 0}
+                        classname={it.classname}
                       />
 
                       {it.text.map((text, index) => {

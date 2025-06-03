@@ -8,7 +8,11 @@ const musicReviews: ReviewItem[] = [
     released: 2024,
     content: [
       {
-        src: "/images/review_images/review-1.webp",
+        imgSrc: "/images/review_images/review-1.webp",
+        imgAlt: "Rema's Heis Album Cover",
+        width: 320,
+        height: 320,
+        classname: "rounded-lg",
         text: [
           "Rema has returned with an album that not only cements his place at the top of the new wave of Afrobeats artists but also showcases his unique artistry and bold creativity. From the outset, Rema's mission is to demonstrate his dominance and versatility within the genre.",
           "The album kicks off with an intensity that is hard to ignore. Rema bursts out of the gates with the energy of a sprinter, setting a pace that is relentless, only easing up near the very end. His choice of beats is as polarizing as it is innovative, with tracks that weave between ethereal vocal deliveries and sharply crafted songwriting. Rema doesn't just want to be heard—he demands it, asserting his presence as if to say, “I am HIM.” The confidence is palpable and unapologetic.",
@@ -30,7 +34,11 @@ const musicReviews: ReviewItem[] = [
     released: 2024,
     content: [
       {
-        src: "/images/review_images/review-2.webp",
+        imgSrc: "/images/review_images/review-2.webp",
+        imgAlt: "Asake Lungu Boy Album Cover",
+        width: 320,
+        height: 320,
+        classname: "rounded-lg",
         text: [
           "Lungu Boy to Space: A Poetry Album Review on Lungu Boys.",
           "On Asake's second work of art, We take a dive into the mind of the lungu boy himself, Swimming through his mother's words on patience, backstroking through his struggles in his early stage of his career and belly flopping into his love for skating.",
