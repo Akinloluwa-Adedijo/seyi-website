@@ -3,6 +3,7 @@ import MusicCard from "../../components/MusicCard/MusicCard";
 
 const musicItems = [
   {
+    id: 1,
     title: "Look at figma file",
     year: 2024,
     imgSrc: "/images/home_images/seyi-landing.jpg",
@@ -12,6 +13,27 @@ const musicItems = [
     href: "#",
   },
   {
+    id: 2,
+    title: "Look at figma file",
+    year: 2024,
+    imgSrc: "/images/home_images/seyi-landing.jpg",
+    imgAlt: "Ṣèyí,ThePoet Profile Image",
+    imgWidth: 5464,
+    imgHeight: 8192,
+    href: "#",
+  },
+  {
+    id: 3,
+    title: "Look at figma file",
+    year: 2024,
+    imgSrc: "/images/home_images/seyi-landing.jpg",
+    imgAlt: "Ṣèyí,ThePoet Profile Image",
+    imgWidth: 5464,
+    imgHeight: 8192,
+    href: "#",
+  },
+  {
+    id: 4,
     title: "Look at figma file",
     year: 2024,
     imgSrc: "/images/home_images/seyi-landing.jpg",
@@ -22,7 +44,7 @@ const musicItems = [
   },
 ];
 const Music = () => {
-  const remMusicItems = musicItems.concat;
+  const remMusicItems = musicItems.filter((item) => item.id !== 1);
   console.log(remMusicItems);
 
   return (
@@ -39,6 +61,21 @@ const Music = () => {
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+        {remMusicItems.map((item) => (
+          <MusicCard
+            key={item.id}
+            title={item.title}
+            year={item.year}
+            imgSrc={item.imgSrc}
+            imgAlt={item.imgAlt}
+            size="sm"
+            imgWidth={item.imgWidth}
+            imgHeight={item.imgHeight}
+            href={item.href}
+          />
+        ))}
+
+        {/* Uncomment the following lines to add more MusicCards */}
         {/* <MusicCard
           title="GODOT - A Performance of Self, Act 1"
           year={2025}

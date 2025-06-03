@@ -30,7 +30,7 @@ const MusicCard: React.FC<MusicCardProps> = ({
           imgAlt={imgAlt}
           width={imgWidth}
           height={imgHeight}
-          classname={`${size === "sm" ? "max-h-350px" : "max-h-screen"}`}
+          classname={`${size === "sm" ? "max-h-[400px]" : "max-h-screen"}`}
         />
       </a>
       <div className="flex font-medium justify-between">
