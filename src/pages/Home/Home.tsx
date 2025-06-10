@@ -26,7 +26,7 @@ const homeMusic = [
 ];
 const Home = () => {
   return (
-    <main className="flex flex-col items-center gap-20 overflow-hidden">
+    <main className="flex flex-col items-center gap-20 overflow-hidden py-30">
       <LandingPage />
       <Description />
       <section className="flex flex-col gap-10 p-5">

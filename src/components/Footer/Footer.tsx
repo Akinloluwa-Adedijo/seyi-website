@@ -50,9 +50,13 @@ interface RenderLinkProps {
 const RenderLinks = ({ title, links }: RenderLinkProps) => {
   return (
     <div className="flex flex-col gap-2 text-base uppercase font-semibold">
-      <p className="font-normal text-gray-300">{title}</p>
+      <p className="font-normal text-gray-900">{title}</p>
       {links.map((link, index) => (
-        <a key={index} href={link.href} className="hover:text-yellow-300">
+        <a
+          key={index}
+          href={link.href}
+          className="text-black-950 hover:text-black-900"
+        >
           {link.name}
         </a>
       ))}
@@ -61,13 +65,13 @@ const RenderLinks = ({ title, links }: RenderLinkProps) => {
 };
 const Footer = () => {
   return (
-    <footer className="flex flex-col gap-25 p-5 pt-50">
+    <footer className="flex flex-col gap-25 p-5 bg-yellow-300">
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
         <RenderLinks title="Navigation" links={navigationLinks} />
         <RenderLinks title="Contact" links={contactLinks} />
         <RenderLinks title="Listen" links={listenLinks} />
       </div>
-      <div className="flex flex-col justify-between gap-5 sm:items-end sm:flex-row text-yellow-300">
+      <div className="flex flex-col justify-between gap-5 sm:items-end sm:flex-row text-black">
         <p className="text-[8vw] font-black uppercase">Șèyí,ThePoet</p>
         <p>@2025</p>
       </div>
