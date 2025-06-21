@@ -2,6 +2,7 @@ import { useState } from "react";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import UpdateCard from "../../components/UpdateCard/UpdateCard";
 import UpdateModal from "../../components/UpdateModal/UpdateModal";
+import useDocumentTitle from "../../utils/useDocumentTitle";
 
 export interface UpdateItem {
   id: number;
@@ -30,6 +31,8 @@ const Updates = () => {
     setSelectedItem(item);
     setIsModalOpen(true);
   };
+
+  useDocumentTitle("Ṣèyí,ThePoet | Updates");
 
   return (
     <SectionWrapper title="Updates">

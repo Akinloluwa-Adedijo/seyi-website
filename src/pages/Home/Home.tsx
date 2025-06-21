@@ -5,7 +5,7 @@ import MusicCard from "../../components/MusicCard/MusicCard";
 
 import Publications from "../../components/Publications/Publications";
 import { useRef } from "react";
-
+import useDocumentTitle from "../../utils/useDocumentTitle.js";
 const homeMusic = [
   {
     title: "GODOT: A Performance of Self",
@@ -37,6 +37,7 @@ const opacity = {
   },
 };
 const Home = () => {
+  useDocumentTitle("Ṣèyí,ThePoet | Artist");
   const homeRef = useRef<HTMLDivElement>(null);
   const inView = useInView(homeRef, {
     once: true,

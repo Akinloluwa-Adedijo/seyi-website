@@ -1,5 +1,6 @@
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import MusicCard from "../../components/MusicCard/MusicCard";
+import useDocumentTitle from "../../utils/useDocumentTitle.js";
 
 const musicItems = [
   {
@@ -45,7 +46,7 @@ const musicItems = [
 ];
 const Music = () => {
   const remMusicItems = musicItems.filter((item) => item.id !== 1);
-  console.log(remMusicItems);
+  useDocumentTitle("Ṣèyí,ThePoet | Music");
 
   return (
     <SectionWrapper title="Music">

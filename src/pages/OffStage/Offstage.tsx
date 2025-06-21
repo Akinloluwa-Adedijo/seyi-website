@@ -3,6 +3,7 @@ import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import MusicReviews from "../../components/MusicReviews/MusicReviews";
 import ReviewModal from "../../components/ReviewModal/ReviewModal";
 import Poems from "../../components/Poems/Poems";
+import useDocumentTitle from "../../utils/useDocumentTitle";
 
 export interface ReviewItem {
   id: number;
@@ -30,6 +31,7 @@ const Offstage = () => {
     setSelectedItem(item);
     setIsModalOpen(true);
   };
+  useDocumentTitle("Ṣèyí,ThePoet | Offstage");
 
   return (
     <SectionWrapper title="Offstage">

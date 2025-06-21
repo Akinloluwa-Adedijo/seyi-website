@@ -1,5 +1,15 @@
+import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
+import useDocumentTitle from "../../utils/useDocumentTitle";
+
 const Error = () => {
-  return <div>this is the error page</div>;
+  useDocumentTitle("OOps! Page Not Found");
+  return (
+    <SectionWrapper title="OOps! Page Not Found">
+      <div className="bg-yellow-300 text-black p-5 text-xl font-medium">
+        <a href="/">Go to Home</a>
+      </div>
+    </SectionWrapper>
+  );
 };
 
 export default Error;

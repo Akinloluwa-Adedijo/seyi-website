@@ -1,4 +1,4 @@
-import { motion, useInView, useSpring } from "motion/react";
+import { motion, useInView } from "motion/react";
 import React, { useRef } from "react";
 
 type SectionWrapperProps = {
