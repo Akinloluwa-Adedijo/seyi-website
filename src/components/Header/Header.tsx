@@ -95,25 +95,25 @@ const NavBottom: React.FC<NavBottomProps> = ({ isOpen, setIsOpen }) => {
   return (
     <>
       <motion.div
-        className="sm:hidden  overflow-hidden bg-yellow-300 text-black "
+        className="sm:hidden overflow-hidden bg-yellow-300 text-black"
         variants={height}
         initial="initial"
         animate="enter"
         exit="exit"
       >
-        <div>
-          <div className="flex flex-col items-center gap-5 p-5">
-            {navLinks.map((link, index) => (
-              <Link
-                to={link.href}
-                key={index}
-                onClick={() => setIsOpen(false)}
-                className="text-3xl"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
+        {/* <div> */}
+        <div className="flex flex-col items-center gap-15 p-10">
+          {navLinks.map((link, index) => (
+            <Link
+              to={link.href}
+              key={index}
+              onClick={() => setIsOpen(false)}
+              className="text-3xl uppercase font-medium"
+            >
+              {link.name}
+            </Link>
+          ))}
+          {/* </div> */}
         </div>
       </motion.div>
     </>
