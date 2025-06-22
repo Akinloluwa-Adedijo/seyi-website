@@ -7,7 +7,7 @@ const musicItems = [
     id: 1,
     title: "Look at figma file",
     year: 2024,
-    imgSrc: "/images/home_images/seyi-landing.jpg",
+    imgSrc: "/images/home_images/seyi-landing.webp",
     imgAlt: "Ṣèyí,ThePoet Profile Image",
     imgWidth: 5464,
     imgHeight: 8192,
@@ -17,7 +17,7 @@ const musicItems = [
     id: 2,
     title: "Look at figma file",
     year: 2024,
-    imgSrc: "/images/home_images/seyi-landing.jpg",
+    imgSrc: "/images/home_images/seyi-landing.webp",
     imgAlt: "Ṣèyí,ThePoet Profile Image",
     imgWidth: 5464,
     imgHeight: 8192,
@@ -27,7 +27,7 @@ const musicItems = [
     id: 3,
     title: "Look at figma file",
     year: 2024,
-    imgSrc: "/images/home_images/seyi-landing.jpg",
+    imgSrc: "/images/home_images/seyi-landing.webp",
     imgAlt: "Ṣèyí,ThePoet Profile Image",
     imgWidth: 5464,
     imgHeight: 8192,
@@ -37,7 +37,7 @@ const musicItems = [
     id: 4,
     title: "Look at figma file",
     year: 2024,
-    imgSrc: "/images/home_images/seyi-landing.jpg",
+    imgSrc: "/images/home_images/seyi-landing.webp",
     imgAlt: "Ṣèyí,ThePoet Profile Image",
     imgWidth: 5464,
     imgHeight: 8192,
@@ -80,21 +80,21 @@ const Music = () => {
         {/* <MusicCard
           title="GODOT - A Performance of Self, Act 1"
           year={2025}
-          imgSrc="/seyi-landing.jpg"
+          imgSrc="/seyi-landing.webp"
           imgAlt="Alt image goes here"
           size="sm"
         />
         <MusicCard
           title="GODOT - A Performance of Self, Act 1"
           year={2025}
-          imgSrc="/seyi-landing.jpg"
+          imgSrc="/seyi-landing.webp"
           imgAlt="Alt image goes here"
           size="sm"
         />
         <MusicCard
           title="GODOT - A Performance of Self, Act 1"
           year={2025}
-          imgSrc="/seyi-landing.jpg"
+          imgSrc="/seyi-landing.webp"
           imgAlt="Alt image goes here"
           size="sm"
         /> */}

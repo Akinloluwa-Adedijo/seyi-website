@@ -9,7 +9,7 @@ const updatesData: UpdateItem[] = [
   {
     id: 1,
     title: "Performance at talk with sosa: A mental health conference",
-    cover: "/seyi-landing.jpg",
+    cover: "/seyi-landing.webp",
     coverAlt: "alt text goes here",
     coverWidth: 320,
     coverHeight: 320,
@@ -51,7 +51,7 @@ const updatesData: UpdateItem[] = [
   {
     id: 2,
     title: "Seyi Synth 5k",
-    cover: "/seyi-landing.jpg",
+    cover: "/seyi-landing.webp",
     coverAlt: "alt text goes here",
     coverWidth: 320,
     coverHeight: 320,
@@ -70,7 +70,7 @@ const updatesData: UpdateItem[] = [
   {
     id: 3,
     title: "Upcoming Album: Oluwaseyi The Poet",
-    cover: "/seyi-landing.jpg",
+    cover: "/seyi-landing.webp",
     coverAlt: "alt text goes here",
     coverWidth: 320,
     coverHeight: 320,

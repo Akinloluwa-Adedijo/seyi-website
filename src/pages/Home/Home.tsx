@@ -10,7 +10,7 @@ const homeMusic = [
   {
     title: "GODOT: A Performance of Self",
     year: 2025,
-    imgSrc: "/images/home_images/seyi-landing.jpg",
+    imgSrc: "/images/home_images/seyi-landing.webp",
     imgAlt: "Ṣèyí,ThePoet Profile Image",
     imgWidth: 5464,
     imgHeight: 8192,
@@ -19,7 +19,7 @@ const homeMusic = [
   {
     title: "Look at figma file",
     year: 2024,
-    imgSrc: "/images/home_images/seyi-landing.jpg",
+    imgSrc: "/images/home_images/seyi-landing.webp",
     imgAlt: "Ṣèyí,ThePoet Profile Image",
     imgWidth: 5464,
     imgHeight: 8192,

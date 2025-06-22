@@ -1,7 +1,7 @@
 import CustomImage from "../CustomImage/CustomImage";
 
 const landingImage = {
-  imgSrc: "/images/home_images/seyi-landing.jpg",
+  imgSrc: "/images/home_images/seyi-landing.webp",
   imgAlt: "Ṣèyí,ThePoet Profile Image",
   imgWidth: 5464,
   imgHeight: 8192,
