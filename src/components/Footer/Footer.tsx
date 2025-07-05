@@ -29,13 +29,10 @@ const contactLinks = [
 
 const listenLinks = [
   {
-    name: "Spotify",
-    href: "https://open.spotify.com/artist/1N06xJ9v8d6oDgCUqBSkr7",
+    name: "Bandcamp",
+    href: "https://seyithepoet.bandcamp.com/",
   },
-  {
-    name: "Apple Music",
-    href: "https://music.apple.com/ca/artist/%C8%99%C3%A8y%C3%ADthepoet/1765384886",
-  },
+
   {
     name: "Youtube",
     href: "https://www.youtube.com/@seyithepoet.mp4",

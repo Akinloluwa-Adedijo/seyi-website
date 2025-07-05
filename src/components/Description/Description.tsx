@@ -4,7 +4,7 @@ const phrase: string[] = [
 
 const Description = () => {
   return (
-    <div className="text-2xl sm:text-[3vw] flex flex-wrap w-[90%]">
+    <div className="text-xl sm:text-[3vw] flex flex-wrap w-[90%]">
       {[phrase]}
     </div>
   );

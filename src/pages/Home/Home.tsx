@@ -57,7 +57,7 @@ const Home = () => {
         <LandingPage />
         <Description />
         <section className="flex flex-col gap-10 p-5 w-full">
-          <h2 className="text-4xl sm:text-[4vw] uppercase font-medium text-center">
+          <h2 className="text-4xl sm:text-[5vw] uppercase font-medium text-center">
             Music
           </h2>
 
@@ -78,7 +78,7 @@ const Home = () => {
           })}
         </section>
         <section className="w-full flex flex-col gap-10 p-5">
-          <h2 className="text-4xl uppercase font-medium text-center">
+          <h2 className="text-4xl sm:text-[5vw] uppercase font-medium text-center">
             Publications
           </h2>
           <Publications />
