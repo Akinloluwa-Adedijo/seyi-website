@@ -23,8 +23,8 @@ const MusicCard: React.FC<MusicCardProps> = ({
   href,
 }) => {
   return (
-    <div className="flex flex-col gap-2">
-      <a href={href}>
+    <div className="flex flex-col gap-2 w-full h-full">
+      <a href={href} target="_blank" rel="noopener noreferrer">
         <CustomImage
           imgSrc={imgSrc}
           imgAlt={imgAlt}

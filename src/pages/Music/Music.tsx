@@ -5,43 +5,43 @@ import useDocumentTitle from "../../utils/useDocumentTitle.js";
 const musicItems = [
   {
     id: 1,
-    title: "Look at figma file",
-    year: 2024,
-    imgSrc: "/images/home_images/seyi-landing.webp",
-    imgAlt: "Ṣèyí,ThePoet Profile Image",
-    imgWidth: 5464,
-    imgHeight: 8192,
-    href: "#",
+    title: "GODOT: A Performance of Self",
+    year: 2025,
+    imgSrc: "/gifs/fwut_viz.gif",
+    imgAlt: "FWUT Visualizer",
+    imgWidth: 800,
+    imgHeight: 450,
+    href: "https://seyithepoet.bandcamp.com/album/godot-act-1-a-performance-of-self",
   },
   {
     id: 2,
-    title: "Look at figma file",
-    year: 2024,
-    imgSrc: "/images/home_images/seyi-landing.webp",
+    title: "I will Rather Die",
+    year: 2025,
+    imgSrc: "/images/music_images/godot_album_cover.webp",
     imgAlt: "Ṣèyí,ThePoet Profile Image",
-    imgWidth: 5464,
-    imgHeight: 8192,
-    href: "#",
+    imgWidth: 3000,
+    imgHeight: 3000,
+    href: "https://seyithepoet.bandcamp.com/track/i-will-rather-die",
   },
   {
     id: 3,
-    title: "Look at figma file",
-    year: 2024,
-    imgSrc: "/images/home_images/seyi-landing.webp",
+    title: "I Love You",
+    year: 2025,
+    imgSrc: "/images/music_images/godot_album_cover.webp",
     imgAlt: "Ṣèyí,ThePoet Profile Image",
-    imgWidth: 5464,
-    imgHeight: 8192,
-    href: "#",
+    imgWidth: 3000,
+    imgHeight: 3000,
+    href: "https://seyithepoet.bandcamp.com/track/i-love-you",
   },
   {
     id: 4,
-    title: "Look at figma file",
+    title: "Samuel?",
     year: 2024,
-    imgSrc: "/images/home_images/seyi-landing.webp",
-    imgAlt: "Ṣèyí,ThePoet Profile Image",
-    imgWidth: 5464,
-    imgHeight: 8192,
-    href: "#",
+    imgSrc: "/gifs/samuel.gif",
+    imgAlt: "Ṣamuel Video Preview",
+    imgWidth: 800,
+    imgHeight: 450,
+    href: "https://youtu.be/Ha2gxgRqbgM?si=ZuWOIccnviYHfEHE",
   },
 ];
 const Music = () => {
@@ -75,29 +75,6 @@ const Music = () => {
             href={item.href}
           />
         ))}
-
-        {/* Uncomment the following lines to add more MusicCards */}
-        {/* <MusicCard
-          title="GODOT - A Performance of Self, Act 1"
-          year={2025}
-          imgSrc="/seyi-landing.webp"
-          imgAlt="Alt image goes here"
-          size="sm"
-        />
-        <MusicCard
-          title="GODOT - A Performance of Self, Act 1"
-          year={2025}
-          imgSrc="/seyi-landing.webp"
-          imgAlt="Alt image goes here"
-          size="sm"
-        />
-        <MusicCard
-          title="GODOT - A Performance of Self, Act 1"
-          year={2025}
-          imgSrc="/seyi-landing.webp"
-          imgAlt="Alt image goes here"
-          size="sm"
-        /> */}
       </div>
     </SectionWrapper>
   );

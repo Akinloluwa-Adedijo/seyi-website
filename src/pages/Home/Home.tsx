@@ -10,20 +10,20 @@ const homeMusic = [
   {
     title: "GODOT: A Performance of Self",
     year: 2025,
-    imgSrc: "/images/home_images/seyi-landing.webp",
-    imgAlt: "Ṣèyí,ThePoet Profile Image",
-    imgWidth: 5464,
-    imgHeight: 8192,
-    href: "#",
+    imgSrc: "/gifs/fwut_viz.gif",
+    imgAlt: "FWUT Visualizer",
+    imgWidth: 800,
+    imgHeight: 450,
+    href: "https://seyithepoet.bandcamp.com/album/godot-act-1-a-performance-of-self",
   },
   {
-    title: "Look at figma file",
+    title: "Samuel?",
     year: 2024,
-    imgSrc: "/images/home_images/seyi-landing.webp",
-    imgAlt: "Ṣèyí,ThePoet Profile Image",
-    imgWidth: 5464,
-    imgHeight: 8192,
-    href: "#",
+    imgSrc: "/gifs/samuel.gif",
+    imgAlt: "Ṣamuel? Video Preview",
+    imgWidth: 800,
+    imgHeight: 450,
+    href: "https://www.youtube.com/watch?v=Ha2gxgRqbgM&pp=0gcJCcEJAYcqIYzv",
   },
 ];
 
@@ -52,12 +52,14 @@ const Home = () => {
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         variants={opacity}
-        className="flex flex-col items-center gap-20 overflow-hidden "
+        className="flex flex-col items-center gap-30 md:gap-50 overflow-hidden "
       >
         <LandingPage />
         <Description />
-        <section className="flex flex-col gap-10 p-5">
-          <h2 className="text-4xl uppercase font-medium text-center">Music</h2>
+        <section className="flex flex-col gap-10 p-5 w-full">
+          <h2 className="text-4xl sm:text-[4vw] uppercase font-medium text-center">
+            Music
+          </h2>
 
           {homeMusic.map((music, index) => {
             return (

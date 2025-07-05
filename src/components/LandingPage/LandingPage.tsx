@@ -8,8 +8,8 @@ const landingImage = {
 };
 const LandingPage = () => {
   return (
-    <section className="relative flex flex-col gap-5 min-h-screen max-h-full overflow-hidden">
-      <h1 className="text-4xl sm:text-[10vw] text-yellow-300 font-black uppercase px-5 text-center tracking-tight">
+    <section className="relative flex flex-col gap-5 overflow-hidden">
+      <h1 className="text-4xl sm:text-[10vw] text-yellow-300 font-black uppercase text-center tracking-tight">
         Șèyí,ThePoet
       </h1>
       <CustomImage

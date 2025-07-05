@@ -61,7 +61,7 @@ const PublicationCard = ({ publication }: { publication: publicationItem }) => {
             rel="noopener noreferrer"
             className="underline hover:no-underline text-black-300 hover:text-black-50 transition-colors ease-in-out duration-200"
           >
-            View
+            View Article
           </a>
         </div>
       </div>
