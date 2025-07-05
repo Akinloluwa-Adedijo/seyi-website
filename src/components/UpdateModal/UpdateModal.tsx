@@ -10,13 +10,39 @@ const UpdateModal = ({ isOpen, onClose, updateItem }: UpdateModalProps) => {
   // Prevent scrolling on the body when the modal is open
   useEffect(() => {
     if (isOpen) {
+      // Store the current scroll position
+      const scrollY = window.scrollY;
+
+      // Apply multiple strategies to prevent scrolling
       document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
     } else {
+      // Restore scrolling
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
       document.body.style.overflow = "auto";
+
+      // Restore scroll position
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      }
     }
 
     return () => {
+      // Cleanup function to ensure scrolling is restored
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
       document.body.style.overflow = "auto";
+
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      }
     };
   }, [isOpen]);
 
@@ -63,11 +89,12 @@ const UpdateModal = ({ isOpen, onClose, updateItem }: UpdateModalProps) => {
             })}
           </div>
           {updateItem.href && (
-            <div>
+            <div className="py-5">
               <a
                 href={updateItem.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-3xl underline hover:text-white hover:no-underline"
               >
                 Visit the Link
               </a>
