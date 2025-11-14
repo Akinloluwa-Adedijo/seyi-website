@@ -1,133 +1,84 @@
-import React from "react";
+// import React from "react";
 import { Link } from "react-router-dom";
 import {
-  AnimatePresence,
+  // isDragActive,
+  // AnimatePresence,
   motion,
   useScroll,
   useSpring,
   useTransform,
 } from "motion/react";
-import { useMobile } from "../../hooks/use-mobile";
-import { useEffect } from "react";
+import { useState } from "react";
+// import { useMobile } from "../../hooks/use-mobile";
+// import { useEffect } from "react";
 
 const transition = { duration: 1, ease: [0.65, 0, 0.35, 1] };
-const opacity = {
-  initial: {
-    opacity: 0,
-  },
-  open: {
-    opacity: 1,
-    transition: { duration: 0.5 },
-  },
-  closed: {
-    opacity: 0,
-    transition: { duration: 0.5 },
-  },
+
+type NavMenuProps = {
+  isActive: boolean;
+  toggleMenu: () => void;
 };
 
-const navBackground = {
-  initial: {
-    height: 0,
-  },
-  open: {
-    height: "100vh",
-    transition,
-  },
-  closed: {
-    height: 0,
-    transition,
-  },
-};
-
-const navLinks = [
-  {
-    name: "Music",
-    href: "/music",
-  },
-  {
-    name: "Offstage",
-    href: "/offstage",
-  },
-  {
-    name: "Updates",
-    href: "/updates",
-  },
-  {
-    name: "Contact",
-    href: "/contact",
-  },
-];
-const height = {
-  initial: {
-    height: 0,
-  },
-  enter: {
-    height: "auto",
-    transition,
-  },
-  exit: {
-    height: 0,
-    transition,
-  },
-};
-
-interface NavBottomProps {
-  isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
-const NavBottom: React.FC<NavBottomProps> = ({ isOpen, setIsOpen }) => {
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isOpen]);
-
-  if (!isOpen) {
-    return null; // Don't render anything if the menu is closed
-  }
-
+const NavMenu = ({ isActive, toggleMenu }: NavMenuProps) => {
   return (
-    <>
+    <div className="button">
       <motion.div
-        className="sm:hidden overflow-hidden bg-yellow-300 text-black"
-        variants={height}
-        initial="initial"
-        animate="enter"
-        exit="exit"
+        className="slider"
+        animate={{ top: isActive ? "-100%" : "0%" }}
+        transition={transition}
       >
-        {/* <div> */}
-        <div className="flex flex-col items-center gap-15 p-10">
-          {navLinks.map((link, index) => (
-            <Link
-              to={link.href}
-              key={index}
-              onClick={() => setIsOpen(false)}
-              className="text-3xl uppercase font-medium"
-            >
-              {link.name}
-            </Link>
-          ))}
-          {/* </div> */}
+        <div className="el" onClick={() => toggleMenu()}>
+          <PerspectiveText label="Menu" />
+        </div>
+        <div className="el" onClick={() => toggleMenu()}>
+          <PerspectiveText label="Close" />
         </div>
       </motion.div>
-    </>
+    </div>
   );
 };
 
-const Header = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const isMobile = useMobile();
+type PerspectiveTextProps = {
+  label: string;
+};
 
+function PerspectiveText({ label }: PerspectiveTextProps) {
+  return (
+    <div className="perspectiveText">
+      <p>{label}</p>
+      <p>{label}</p>
+    </div>
+  );
+}
+
+const menu = {
+  open: {
+    width: "480px",
+    height: "650px",
+    top: "-25px",
+    right: "-25px",
+    transition: { duration: 0.75, type: "tween", ease: [0.76, 0, 0.24, 1] },
+  },
+  closed: {
+    width: "100px",
+    height: "40px",
+    top: "0px",
+    right: "0px",
+    transition: {
+      duration: 0.75,
+      delay: 0.35,
+      type: "tween",
+      ease: [0.76, 0, 0.24, 1],
+    },
+  },
+};
+
+const Header = () => {
   // Get the scroll progress (0 to 1)
   const { scrollYProgress } = useScroll();
+  const [isActive, setIsActive] = useState(false);
 
-  //Map the scroll progress to a rotation value (0 to 360 degrees)
+  // Map the scroll progress to a rotation value (0 to 360 degrees)
   const rotate = useTransform(
     useSpring(scrollYProgress, {
       stiffness: 50,
@@ -137,74 +88,34 @@ const Header = () => {
     [0, 1],
     [0, 360]
   );
+
   return (
-    <header className="flex flex-col fixed w-full z-10">
-      <div className="flex justify-between items-center py-5 px-5  backdrop-blur-sm">
-        <div>
-          <Link to={"/"}>
-            <motion.img
-              src="/seyi-logo.svg"
-              alt="Ṣèyí,ThePoet Logo"
-              height={40}
-              width={40}
-              className="w-10 h-10"
-              style={{ rotate }}
-            />
-          </Link>
+    <header className="flex flex-col fixed w-full z-50">
+      <nav className="flex justify-between items-center pt-10 px-10">
+        <Link to={"/"}>
+          <motion.img
+            src="/seyi-logo.svg"
+            alt="Ṣèyí,ThePoet Logo"
+            height={40}
+            width={40}
+            className="w-10 h-10"
+            style={{ rotate }}
+          />
+        </Link>
+        <div className="header">
+          <motion.div
+            className="menu"
+            variants={menu}
+            animate={isActive ? "open" : "closed"}
+            initial="closed"
+          ></motion.div>
+
+          <NavMenu
+            isActive={isActive}
+            toggleMenu={() => setIsActive(!isActive)}
+          />
         </div>
-
-        <nav className="flex uppercase justify-between items-center">
-          <ul
-            className="hidden sm:flex justify-between items-center gap-15"
-            aria-hidden={isMobile ? "true" : "false"}
-          >
-            {navLinks.map((link, index) => (
-              <Link
-                to={link.href}
-                key={index}
-                onClick={() => setIsOpen(false)}
-                className="hover:text-yellow-300"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </ul>
-
-          {/* Mobile Controls */}
-          <ul aria-hidden={!isMobile ? "true" : "false"}>
-            <div
-              className="sm:hidden relative flex items-center h-full hover:cursor-pointer"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              <motion.p
-                variants={opacity}
-                animate={!isOpen ? "open" : "closed"}
-              >
-                Menu
-              </motion.p>
-              <motion.p
-                className="absolute opacity-0"
-                variants={opacity}
-                animate={isOpen ? "open" : "closed"}
-              >
-                Close
-              </motion.p>
-            </div>
-          </ul>
-        </nav>
-      </div>
-      <AnimatePresence mode="wait">
-        {isOpen && <NavBottom isOpen={isOpen} setIsOpen={setIsOpen} />}
-      </AnimatePresence>
-
-      {isMobile && (
-        <motion.div
-          className="absolute bg-white h-full w-full left-0 top-[100%]"
-          variants={navBackground}
-          initial="initial"
-          animate={isOpen ? "open" : "closed"}
-        ></motion.div>
-      )}
+      </nav>
     </header>
   );
 };
