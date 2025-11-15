@@ -11,6 +11,7 @@ import { useState } from "react";
 import { links, footerLinks } from "../../data/data";
 import { perspective, slideIn } from "../../data/anim";
 
+// TODO chore refactor to make code clean
 const transition = { duration: 1, ease: [0.65, 0, 0.35, 1] };
 
 type NavMenuProps = {
@@ -44,8 +45,8 @@ type PerspectiveTextProps = {
 function PerspectiveText({ label }: PerspectiveTextProps) {
   return (
     <div className="perspectiveText">
-      <p>{label}</p>
-      <p>{label}</p>
+      <p className="font-medium">{label}</p>
+      <p className="font-medium">{label}</p>
     </div>
   );
 }
