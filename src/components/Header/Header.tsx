@@ -1,16 +1,15 @@
 // import React from "react";
 import { Link } from "react-router-dom";
 import {
-  // isDragActive,
-  // AnimatePresence,
+  AnimatePresence,
   motion,
   useScroll,
   useSpring,
   useTransform,
 } from "motion/react";
 import { useState } from "react";
-// import { useMobile } from "../../hooks/use-mobile";
-// import { useEffect } from "react";
+import { links, footerLinks } from "../../data/data";
+import { perspective, slideIn } from "../../data/anim";
 
 const transition = { duration: 1, ease: [0.65, 0, 0.35, 1] };
 
@@ -51,12 +50,16 @@ function PerspectiveText({ label }: PerspectiveTextProps) {
   );
 }
 
+const isMobile = window.innerWidth < 480; // or 640 for Tailwind 'sm'
+
+const MENU_WIDTH = isMobile ? "350px" : "480px";
+
 const menu = {
   open: {
-    width: "480px",
-    height: "650px",
-    top: "-25px",
-    right: "-25px",
+    width: MENU_WIDTH,
+    height: "550px",
+    top: "-20px",
+    right: "-20px",
     transition: { duration: 0.75, type: "tween", ease: [0.76, 0, 0.24, 1] },
   },
   closed: {
@@ -73,12 +76,60 @@ const menu = {
   },
 };
 
+const Body = () => {
+  return (
+    <div className="nav">
+      <div className={"body"}>
+        {links.map((link, i) => {
+          const { title, href } = link;
+          return (
+            <div key={`b_${i}`} className="linkContainer">
+              <motion.div
+                custom={i}
+                variants={perspective}
+                initial="initial"
+                animate="enter"
+                exit="exit"
+              >
+                <a href={href} className="font-bold underline-link">
+                  {/* <a href={href} > */}
+                  {title}
+                </a>
+              </motion.div>
+            </div>
+          );
+        })}
+      </div>
+
+      <motion.div className="footer">
+        {footerLinks.map((link, i) => {
+          const { title, href } = link;
+
+          return (
+            <li key={`f_${i}`} className="list-none">
+              <motion.a
+                href={href}
+                variants={slideIn}
+                custom={i}
+                initial="initial"
+                animate="enter"
+                exit="exit"
+                className="underline-link text-xl font-medium"
+              >
+                {title}
+              </motion.a>
+            </li>
+          );
+        })}
+      </motion.div>
+    </div>
+  );
+};
+
 const Header = () => {
-  // Get the scroll progress (0 to 1)
   const { scrollYProgress } = useScroll();
   const [isActive, setIsActive] = useState(false);
 
-  // Map the scroll progress to a rotation value (0 to 360 degrees)
   const rotate = useTransform(
     useSpring(scrollYProgress, {
       stiffness: 50,
@@ -108,7 +159,11 @@ const Header = () => {
             variants={menu}
             animate={isActive ? "open" : "closed"}
             initial="closed"
-          ></motion.div>
+          >
+            <AnimatePresence mode="wait">
+              {isActive && <Body />}
+            </AnimatePresence>
+          </motion.div>
 
           <NavMenu
             isActive={isActive}

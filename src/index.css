@@ -130,9 +130,69 @@ body {
   top: 40px;
 }
 .header .menu {
-  width: 480px;
-  height: 650px;
+  width: 360px;
+  height: 400px;
   background-color: var(--color-accent);
   border-radius: 25px;
   position: relative;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 100px 40px 50px 40px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.nav .body {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.nav .body .linkContainer {
+  perspective: 250px;
+  perspective-origin: right;
+}
+
+.nav .body a {
+  text-decoration: none;
+  color: var(--color-bg);
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+.nav .footer {
+  display: flex;
+  flex-wrap: wrap;
+  color: var(--color-bg);
+}
+
+.nav .footer li {
+  width: 50%;
+  margin-top: 5px;
+}
+
+.underline-link {
+  position: relative;
+}
+
+.underline-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-bg);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.underline-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
