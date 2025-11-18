@@ -1,25 +1,26 @@
-import CustomImage from "../CustomImage/CustomImage";
+// import CustomImage from "../CustomImage/CustomImage";
 
-const landingImage = {
-  imgSrc: "/images/home_images/seyi-landing.webp",
-  imgAlt: "Ṣèyí,ThePoet Profile Image",
-  imgWidth: 5464,
-  imgHeight: 8192,
-};
+// const landingImage = {
+//   imgSrc: "/images/home_images/seyi-landing.webp",
+//   imgAlt: "Ṣèyí,ThePoet Profile Image",
+//   imgWidth: 5464,
+//   imgHeight: 8192,
+// };
 const LandingPage = () => {
   return (
-    <section className="relative flex flex-col gap-5 overflow-hidden">
-      <h1 className="text-4xl sm:text-[10vw] text-yellow-300 font-black uppercase text-center">
-        Șèyí,ThePoet
-      </h1>
-      <CustomImage
-        imgSrc={landingImage.imgSrc}
-        imgAlt={landingImage.imgAlt}
-        width={landingImage.imgWidth}
-        height={landingImage.imgHeight}
-        classname="max-h-[110vh]"
-      />
-    </section>
+    // <section className="relative flex flex-col gap-5 overflow-hidden">
+    //   <h1 className="text-4xl sm:text-[10vw] text-yellow-300 font-black uppercase text-center">
+    //     Șèyí,ThePoet
+    //   </h1>
+    //   <CustomImage
+    //     imgSrc={landingImage.imgSrc}
+    //     imgAlt={landingImage.imgAlt}
+    //     width={landingImage.imgWidth}
+    //     height={landingImage.imgHeight}
+    //     classname="max-h-[110vh]"
+    //   />
+    // </section>
+    <>THIS IS THE LANDING PAGE</>
   );
 };
 

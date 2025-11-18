@@ -10,6 +10,7 @@ import {
 import { useState } from "react";
 import { links, footerLinks } from "../../data/data";
 import { perspective, slideIn } from "../../data/anim";
+import { useMobile } from "../../hooks/use-mobile";
 
 // TODO chore refactor to make code clean
 const transition = { duration: 1, ease: [0.65, 0, 0.35, 1] };
@@ -50,33 +51,6 @@ function PerspectiveText({ label }: PerspectiveTextProps) {
     </div>
   );
 }
-
-const isMobile = window.innerWidth < 480; // or 640 for Tailwind 'sm'
-
-const MENU_WIDTH = isMobile ? "350px" : "480px";
-
-const menu = {
-  open: {
-    width: MENU_WIDTH,
-    height: "550px",
-    top: "-20px",
-    right: "-20px",
-    transition: { duration: 0.75, type: "tween", ease: [0.76, 0, 0.24, 1] },
-  },
-  closed: {
-    width: "100px",
-    height: "40px",
-    top: "0px",
-    right: "0px",
-    transition: {
-      duration: 0.75,
-      delay: 0.35,
-      type: "tween",
-      ease: [0.76, 0, 0.24, 1],
-    },
-  },
-};
-
 const Body = () => {
   return (
     <div className="nav">
@@ -130,7 +104,32 @@ const Body = () => {
 const Header = () => {
   const { scrollYProgress } = useScroll();
   const [isActive, setIsActive] = useState(false);
+  const isMobile = useMobile();
 
+  // Move menu variants inside the component
+  const MENU_WIDTH = isMobile ? "320px" : "480px";
+
+  const menu = {
+    open: {
+      width: MENU_WIDTH,
+      height: "550px",
+      top: "-20px",
+      right: "-20px",
+      transition: { duration: 0.75, type: "tween", ease: [0.76, 0, 0.24, 1] },
+    },
+    closed: {
+      width: "100px",
+      height: "40px",
+      top: "0px",
+      right: "0px",
+      transition: {
+        duration: 0.75,
+        delay: 0.35,
+        type: "tween",
+        ease: [0.76, 0, 0.24, 1],
+      },
+    },
+  };
   const rotate = useTransform(
     useSpring(scrollYProgress, {
       stiffness: 50,
