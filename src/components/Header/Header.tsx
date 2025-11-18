@@ -89,7 +89,7 @@ const Body = () => {
                 initial="initial"
                 animate="enter"
                 exit="exit"
-                className="underline-link text-xl font-medium"
+                className="underline-link text-[1.25em]  font-medium"
               >
                 {title}
               </motion.a>

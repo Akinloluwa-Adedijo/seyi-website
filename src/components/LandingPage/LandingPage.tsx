@@ -20,7 +20,9 @@ const LandingPage = () => {
     //     classname="max-h-[110vh]"
     //   />
     // </section>
-    <>THIS IS THE LANDING PAGE</>
+    <div className="text-[5em]">
+      <h1 className="text-[2em]">THIS IS THE LANDING PAGE</h1>
+    </div>
   );
 };
 
