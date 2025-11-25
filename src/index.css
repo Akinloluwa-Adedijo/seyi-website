@@ -52,6 +52,24 @@ body {
   /* max-width: var(--size-container); */
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-black-950);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-yellow-400);
+}
+
 /* ------------------------- Scaling System by Osmo [https://osmo.supply/] -------------------------  */
 /* Desktop */
 :root {
