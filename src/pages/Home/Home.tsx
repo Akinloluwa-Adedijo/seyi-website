@@ -45,7 +45,7 @@ const Home = () => {
   return (
     <main
       ref={homeRef}
-      className="flex flex-col items-center gap-20 overflow-hidden py-30"
+      className="flex flex-col items-center gap-20 overflow-hidden "
     >
       <motion.div
         ref={homeRef}

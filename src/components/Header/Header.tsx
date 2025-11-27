@@ -108,10 +108,12 @@ const Header = () => {
 
   // Move menu variants inside the component
   const MENU_WIDTH = isMobile ? "320px" : "480px";
+  const MENU_HEIGHT = isMobile ? "550px" : "590px";
 
   const menu = {
     open: {
       width: MENU_WIDTH,
+      // height: MENU_HEIGHT,
       height: "550px",
       top: "-20px",
       right: "-20px",
