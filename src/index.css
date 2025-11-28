@@ -263,11 +263,16 @@ body {
 }
 
 /* SplitText animation styles */
-.word-js {
+p .word-js {
   display: inline-block;
   overflow: hidden;
 }
 
-.char-js {
+p .char-js {
   display: inline-block;
+  overflow: hidden;
+}
+
+p .line-js {
+  overflow: hidden;
 }

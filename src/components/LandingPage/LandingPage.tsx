@@ -1,5 +1,5 @@
-import { motion, AnimatePresence } from "motion/react";
-import { useState, useEffect, useRef } from "react";
+import { motion } from "motion/react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
@@ -12,15 +12,15 @@ const images = [
 ];
 
 const LandingPage = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  // const [currentIndex, setCurrentIndex] = useState(0);
   const firstText = useRef(null);
   const imageRef = useRef(null);
   const textContainerRef = useRef(null);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Change image every 5 seconds
+    // const timer = setInterval(() => {
+    //   setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    // }, 5000); // Change image every 5 seconds
       
     gsap.registerPlugin(ScrollTrigger, SplitText);
     
@@ -58,12 +58,12 @@ const LandingPage = () => {
       });
     }
     
-    return () => clearInterval(timer);
+    // return () => clearInterval(timer);
   }, [])
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-black">
-      {/* Fullscreen Image */}
+    <section className="w-full min-h-screen pt-24 flex flex-col items-center justify-center">
+      {/* Fullscreen Image
       <AnimatePresence mode="popLayout">
         <motion.img
           ref={imageRef}
@@ -76,14 +76,24 @@ const LandingPage = () => {
           transition={{ duration: 1 }}
           className="absolute inset-0 w-full h-full object-cover"
         />
-      </AnimatePresence>
+      </AnimatePresence> */}
       
-      {/* Text at Bottom */}
-      <div ref={textContainerRef} className="absolute top-[calc(100vh-250px)] left-0 right-0 " style={{ opacity: 0 }}>
-        <p ref={firstText} className="font-black text-white uppercase leading-none whitespace-nowrap" style={{ fontSize: 'clamp(1rem, 15vw, 13.4375rem)' }}>
-          Șèyí,ThePoet
-        </p>
-      </div>
+      {/* TODO: need to convert the h1 to an svg tro allow for bewttwr scaling */}
+              <h1 ref={firstText} className="font-black uppercase text-fg" 
+              // style={{ fontSize: 'clamp(5vw, 15vw, 13.4375em)' }}
+              style={{ fontSize: '12em' }}
+              >Șèyí,ThePoet</h1>
+
+              {/* TODO convert this image section into m,arquee of the images inside the images array so it adds interest */}
+  <motion.img
+          ref={imageRef}
+          src={images[0].src}
+          alt={images[0].alt}
+          initial={{ opacity: 0, scale: 0 }}  
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 1 }}
+          className="w-full h-full object-cover"
+        />
     </section>
   );
 };
