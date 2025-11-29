@@ -40,6 +40,7 @@ const LandingPage = () => {
     if (firstText.current) {
       const split = new SplitText(firstText.current, {
         type: "chars,words",
+        mask: 'chars',
         charsClass: "char-js",
         wordsClass: "word-js"
       });
@@ -79,7 +80,7 @@ const LandingPage = () => {
       </AnimatePresence> */}
       
       {/* TODO: need to convert the h1 to an svg tro allow for bewttwr scaling */}
-              <h1 ref={firstText} className="font-black uppercase text-fg" 
+              <h1 ref={firstText} className="font-black uppercase text-fg overflow-hidden" 
               // style={{ fontSize: 'clamp(5vw, 15vw, 13.4375em)' }}
               style={{ fontSize: '12em' }}
               >Șèyí,ThePoet</h1>

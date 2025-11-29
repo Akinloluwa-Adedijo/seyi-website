@@ -3,25 +3,26 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
-
+import {useGSAP} from "@gsap/react";
+gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
 const phrase =
   "Șèyí,ThePoet is a passionate spoken word artist, model and creative director; who brings raw emotion and profound insight to the stage. His performances, rich with themes of mental health and the human experience, have touched hearts and sparked conversations.";
 
 const Description2 = () => {
   const charsRef = useRef<HTMLParagraphElement>(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     const element = charsRef.current;
     if (!element) return;
 
     const split = new SplitText(element, {
       type: "lines,words",
+      mask: "lines",
       linesClass: "line-js",
       wordsClass: "word-js",
     });
 
-    const ctx = gsap.context(() => {
-      gsap.from(split.words, {
+      gsap.from(split.lines, {
         scrollTrigger: {
           start: "top bottom",
           trigger: element,
@@ -32,17 +33,11 @@ const Description2 = () => {
         ease: "expo.out",
         stagger: 0.06,
       });
-    }, element);
-
-    return () => {
-      ctx.revert();
-      split.revert();
-    };
   }, []);
   return (
     <section className="flex flex-col md:flex-row w-full min-h-[50vh] text-fg gap-5">
       {/* Left Content Side */}
-      <div className="w-full md:w-1/2 flex flex-col justify-between pl-5 gap-8">
+      <div className="w-full md:w-1/2 flex flex-col justify-between px-5 gap-8">
         <div>
           <h2 className="font-instrument text-5xl md:text-7xl lg:text-8xl italic">
             About
@@ -53,7 +48,7 @@ const Description2 = () => {
           <p
             ref={charsRef}
             // className="max-w-xl"
-            style={{ fontSize: "clamp(1rem, 2vw, 2rem)" }}
+            style={{ fontSize: "clamp(24px, 2vw, 2rem)" }}
           >
             {phrase}
           </p>

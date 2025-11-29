@@ -261,18 +261,3 @@ body {
   transform: scaleX(1);
   transform-origin: left;
 }
-
-/* SplitText animation styles */
-p .word-js {
-  display: inline-block;
-  overflow: hidden;
-}
-
-p .char-js {
-  display: inline-block;
-  overflow: hidden;
-}
-
-p .line-js {
-  overflow: hidden;
-}
