@@ -51,8 +51,8 @@
 }
 
 body {
-  background-color: var(--color-black-950);
-  color: var(--color-black-50);
+  background-color: var(--color-bg);
+  color: var(--color-fg);
   font-size: var(--size-font);
   /* max-width: var(--size-container); */
 }
@@ -260,4 +260,19 @@ body {
 .underline-link:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+
+
+.image-holder{
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.image-holder img{
+  height: 150%;
+  width: 100%;
+  object-fit: cover;
 }

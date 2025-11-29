@@ -1,15 +1,16 @@
-import { Link } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import {  useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import {useGSAP} from "@gsap/react";
+import ParallaxImage from "../ParallaxImage";
 gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
 const phrase =
   "Șèyí,ThePoet is a passionate spoken word artist, model and creative director; who brings raw emotion and profound insight to the stage. His performances, rich with themes of mental health and the human experience, have touched hearts and sparked conversations.";
 
 const Description2 = () => {
   const charsRef = useRef<HTMLParagraphElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     const element = charsRef.current;
@@ -35,7 +36,7 @@ const Description2 = () => {
       });
   }, []);
   return (
-    <section className="flex flex-col md:flex-row w-full min-h-[50vh] text-fg gap-5">
+    <section className="flex flex-col md:flex-row w-full min-h-[50vh] text-fg gap-5" ref={containerRef}>
       {/* Left Content Side */}
       <div className="w-full md:w-1/2 flex flex-col justify-between px-5 gap-8">
         <div>
@@ -57,15 +58,16 @@ const Description2 = () => {
       </div>
 
       {/* Right Image Side */}
-      <div className="w-full md:w-1/2  relative">
+      {/* <div className="w-full md:w-1/2  relative">
         <img
           src="/images/update_images/godot_show/godot_show_7.webp"
           alt="Portrait of Seyi"
           className="w-full h-full object-cover"
         />
-      </div>
+      </div> */}
+      <ParallaxImage image="/images/update_images/godot_show/godot_show_7.webp" alt="Portrait of Seyi" containerStyle="w-full md:w-1/2" containerRef={containerRef} />
     </section>
-  );
+  );  
 };
 
 export default Description2;
