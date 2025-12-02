@@ -3,6 +3,10 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
+import ParallaxImage from "../ParallaxImage";
+import { useGSAP } from "@gsap/react";
+gsap.registerPlugin(ScrollTrigger, SplitText);
+
 const images = [
   { src: "/images/landing/home-1.jpg", alt: "Carousel Image 1" },
   { src: "/images/landing/home-2.jpg", alt: "Carousel Image 2" },
@@ -12,17 +16,13 @@ const images = [
 ];
 
 const LandingPage = () => {
-  // const [currentIndex, setCurrentIndex] = useState(0);
-  const firstText = useRef(null);
-  const imageRef = useRef(null);
-  const textContainerRef = useRef(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
+  const textContainerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    // const timer = setInterval(() => {
-    //   setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    // }, 5000); // Change image every 5 seconds
+  useGSAP(() => {
+
       
-    gsap.registerPlugin(ScrollTrigger, SplitText);
     
     // Initial page load animation
     const tl = gsap.timeline();
@@ -37,55 +37,43 @@ const LandingPage = () => {
     );
     
     // SplitText animation for firstText
-    if (firstText.current) {
-      const split = new SplitText(firstText.current, {
-        type: "chars,words",
-        mask: 'chars',
-        charsClass: "char-js",
-        wordsClass: "word-js"
-      });
-      const chars = split.chars;
-      
-      gsap.from(chars, {
-        scrollTrigger: {
-          start: 'top bottom',
-          trigger: firstText.current
-        },
-        duration: 1.8,
-        yPercent: 100,
-        delay: 0.5,
-        ease: 'expo.out',
-        stagger: 0.06
-      });
-    }
+      if (headingRef.current) {
+        const split = new SplitText(headingRef.current, {
+          type: "chars,words",
+          mask: 'chars',
+          charsClass: "char-js",
+          wordsClass: "word-js",
+          autoSplit: true,
+          onSplit: (self) => {
+            gsap.from(self.chars, {
+              scrollTrigger: {
+                start: 'top bottom',
+                trigger:  headingRef.current,
+              },
+              duration: 1.8,
+              yPercent: 100,
+              delay: 0.5,
+              ease: 'expo.out',
+              stagger: 0.06,
+            });
+          }
+        });
+      }
     
     // return () => clearInterval(timer);
   }, [])
 
   return (
     <section className="w-full min-h-screen pt-24 flex flex-col items-center justify-center">
-      {/* Fullscreen Image
-      <AnimatePresence mode="popLayout">
-        <motion.img
-          ref={imageRef}
-          key={currentIndex}
-          src={images[currentIndex].src}
-          alt={images[currentIndex].alt}
-          // initial={{ opacity: 0 }}  
-          // animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-      </AnimatePresence> */}
       
       {/* TODO: need to convert the h1 to an svg tro allow for bewttwr scaling */}
-              <h1 ref={firstText} className="font-black uppercase text-fg overflow-hidden" 
+              <h1 ref={headingRef} className="font-black uppercase text-fg overflow-hidden" 
               // style={{ fontSize: 'clamp(5vw, 15vw, 13.4375em)' }}
               style={{ fontSize: '12em' }}
+              // style={{ fontSize: '5em' }}
               >Șèyí,ThePoet</h1>
 
-              {/* TODO convert this image section into m,arquee of the images inside the images array so it adds interest */}
+              {/* TODO convert this image section into m,arquee of the images or video reel of seyi performing inside the images array so it adds interest */}
   <motion.img
           ref={imageRef}
           src={images[0].src}
@@ -94,7 +82,8 @@ const LandingPage = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 1 }}
           className="w-full h-full object-cover"
-        />
+        /> 
+  
     </section>
   );
 };

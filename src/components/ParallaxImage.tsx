@@ -7,11 +7,12 @@ export default function ParallaxImage({image, alt, containerStyle, containerRef}
         target: containerRef,
         offset: ['start end', 'end start']
     }));
-    const y = useTransform(scrollYProgress, [0, 1], ['0vh', '150vh']);
+    // const y = useTransform(scrollYProgress, [0, 1], ['0vh', '150vh']);
+    const y = useTransform(scrollYProgress, [0, 1], ['-10vh', '90vh']);
     return (
         <div ref={containerRef} className={`overflow-hidden ${containerStyle}`}>
-            <motion.div style={{ y }} className="relative h-full top-[-45%]">
-                <img src={image} alt={alt} className="object-cover h-full w-full " />
+            <motion.div style={{ y }} className="relative  translate-y-[-30%]">
+                <img src={image} alt={alt} className="object-cover  w-full " />
             </motion.div>
         </div>
     );

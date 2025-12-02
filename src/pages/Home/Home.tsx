@@ -6,8 +6,7 @@ import MusicCard from "../../components/MusicCard/MusicCard";
 import Publications from "../../components/Publications/Publications";
 import { useRef } from "react";
 import useDocumentTitle from "../../utils/useDocumentTitle.js";
-import Description2 from "../../components/Description/Description2.js";
-import Description3 from "../../components/Description/Description3.js";
+
 const homeMusic = [
   {
     title: "GODOT: A Performance of Self",
@@ -57,11 +56,9 @@ const Home = () => {
         className="flex flex-col items-center gap-30 md:gap-50 overflow-hidden "
       >
         <LandingPage />
-        {/* <Description /> */}
-        <Description2 />  
-        <Description3 />
+        <Description />
         <section className="flex flex-col gap-10 p-5 w-full">
-          <h2 className="text-4xl sm:text-[5vw] uppercase font-medium text-center">
+          <h2 className="font-instrument text-5xl md:text-7xl lg:text-8xl italic text-center">
             Music
           </h2>
 

@@ -30,7 +30,7 @@ const SectionWrapper = ({ title, children }: SectionWrapperProps) => {
         animate={inView ? "visible" : "hidden"}
         variants={opacity}
       >
-        <h2 className="text-4xl sm:text-[10vw] text-center text-yellow-300 uppercase font-black">
+        <h2 className=" font-instrument text-4xl sm:text-[10vw] text-center text-yellow-300 uppercase">
           {title}
         </h2>
 
