@@ -14,14 +14,13 @@ const CustomImage = ({
   classname,
 }: CustomImageProps) => {
   return (
-    <div className={`${classname} overflow-hidden`}>
+    <div className={`${classname} overflow-hidden img-holder`} data-version="Listen Now" data-option="option1">
       <motion.img
         src={imgSrc}
         alt={imgAlt}
         width={width}
         height={height}
         loading="lazy"
-        whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.5, ease: [0.65, 0, 0.35, 1] }}
         className="object-cover w-full"
       />
