@@ -78,8 +78,8 @@ const Home = () => {
           })}
 
 
-          <a href="https://seyithepoet.bandcamp.com/album/godot-act-1-a-performance-of-self" target="_blank" rel="noopener noreferrer" className="text-2xl font-bold text-center hover:text-yellow-300 transition-colors ease-in-out duration-200">
-            <p>See All Music</p>
+          <a href="https://linktr.ee/seyi_music?utm_source=linktree_profile_share&ltsid=0a8c7cbe-8351-4bce-96e8-5c4cbab7e823" target="_blank" rel="noopener noreferrer" className="text-2xl font-bold text-center hover:text-yellow-300 transition-colors ease-in-out duration-200">
+            <p>Listen to GODOT Act 1</p>
           </a>
         </section>
         <section className="w-full flex flex-col gap-10 p-5">
