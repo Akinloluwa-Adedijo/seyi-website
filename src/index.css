@@ -483,6 +483,7 @@ body {
     overflow: hidden;
 	z-index: 11;
     pointer-events: none;
+
 }
 
 .cursor__holder {

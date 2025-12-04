@@ -83,7 +83,9 @@ const LandingPage = () => {
           transition={{ duration: 1, delay: 1 }}
           className="w-full h-full object-cover"
         /> 
-  
+  {/* https://gsap.com/community/forums/topic/43269-image-slider-using-clip-path/ */}
+  {/* bring back animated image slider */}
+  {/* slider positioned across the entire screen and the h1 is positioned at the bottom of the slider */}
     </section>
   );
 };
