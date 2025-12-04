@@ -53,6 +53,8 @@ const RenderLinks = ({ title, links }: RenderLinkProps) => {
         <a
           key={index}
           href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-black-950 hover:text-black-900"
         >
           {link.name}
