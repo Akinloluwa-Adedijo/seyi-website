@@ -76,6 +76,11 @@ const Home = () => {
               />
             );
           })}
+
+
+          <a href="https://seyithepoet.bandcamp.com/album/godot-act-1-a-performance-of-self" target="_blank" rel="noopener noreferrer" className="text-2xl font-bold text-center hover:text-yellow-300 transition-colors ease-in-out duration-200">
+            <p>See All Music</p>
+          </a>
         </section>
         <section className="w-full flex flex-col gap-10 p-5">
           <h2 className="text-4xl sm:text-[5vw] uppercase font-medium text-center">
