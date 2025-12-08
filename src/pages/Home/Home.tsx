@@ -55,6 +55,9 @@ const Home = () => {
         className="flex flex-col items-center gap-30 md:gap-50 overflow-hidden "
       >
         <LandingPage />
+        <a href="https://linktr.ee/seyi_music?utm_source=linktree_profile_share&ltsid=0a8c7cbe-8351-4bce-96e8-5c4cbab7e823" target="_blank" rel="noopener noreferrer" className="text-5xl font-bold text-center hover:text-yellow-300 transition-colors ease-in-out duration-200">
+          <p>Listen to GODOT Act 1</p>
+        </a>
         <Description />
         <section className="flex flex-col gap-10 p-5 w-full">
           <h2 className="text-4xl sm:text-[5vw] uppercase font-medium text-center">
@@ -78,9 +81,7 @@ const Home = () => {
           })}
 
 
-          <a href="https://linktr.ee/seyi_music?utm_source=linktree_profile_share&ltsid=0a8c7cbe-8351-4bce-96e8-5c4cbab7e823" target="_blank" rel="noopener noreferrer" className="text-2xl font-bold text-center hover:text-yellow-300 transition-colors ease-in-out duration-200">
-            <p>Listen to GODOT Act 1</p>
-          </a>
+ 
         </section>
         <section className="w-full flex flex-col gap-10 p-5">
           <h2 className="text-4xl sm:text-[5vw] uppercase font-medium text-center">
