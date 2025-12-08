@@ -56,6 +56,7 @@ const navLinks = [
     name: "Contact",
     href: "/contact",
   },
+  {name:"Newsletter", href:"https://seyithepoet.kit.com/93eaf20fa5"}
 ];
 const height = {
   initial: {
