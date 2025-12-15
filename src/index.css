@@ -51,8 +51,8 @@
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-fg);
+  background-color: var(--color-fg);
+  color: var(--color-bg);
   font-size: var(--size-font);
   /* max-width: var(--size-container); */
 }
@@ -114,6 +114,14 @@ body {
     --size-container-min: 0px;
     --size-container-max: 479px;
   }
+}
+
+
+button{
+    font-size: clamp(20px, 1em, 1em);  
+    font-weight: 700;
+    text-transform: uppercase;
+    
 }
 /* Nav menu button */
 .button {
