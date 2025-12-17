@@ -44,15 +44,15 @@
   --color-black-900: oklch(0.36 0 0);
   --color-black-950: oklch(0.22 0 0);
 
-  --color-bg: oklch(0.2103 0.0059 285.89);
-  --color-fg:oklch(0.983 0.0195 87.51);
+  --color-fg: oklch(0.2103 0.0059 285.89);
+  --color-bg:oklch(0.983 0.0195 87.51);
   --color-accent: oklch(0.83 0.1532 81.16);
   --color-secondary: oklch(0.8711 0.0055 286.29);
 }
 
 body {
-  background-color: var(--color-fg);
-  color: var(--color-bg);
+  background-color: var(--color-bg);
+  color: var(--color-fg);
   font-size: var(--size-font);
   /* max-width: var(--size-container); */
 }
@@ -121,7 +121,29 @@ button{
     font-size: clamp(20px, 1em, 1em);  
     font-weight: 700;
     text-transform: uppercase;
-    
+}
+
+.menu-link a{
+  font-size: clamp(32px, 4em, 6em);
+    line-height: 88%;
+}
+.menu-social a{
+  font-size: max(20px, 1.25em);
+
+}
+
+
+.menu-overlay{
+  position: fixed;
+  width: 100%;
+  height: 100svh;
+  background-color: var(--color-accent);
+  z-index: 2;
+  /* pointer-events: none; */
+  scroll-behavior: none;
+  clip-path: polygon(0% 0%, 100% 0, 100% 0%, 0% 0%);
+  overflow: hidden;
+
 }
 /* Nav menu button */
 .button {
