@@ -4,7 +4,7 @@ import Footer from "../components/Footer/Footer";
 import ScrollToTop from "../utils/ScrollToTop";
 import Lenis from "lenis";
 import { useEffect } from "react";
-import CustomCursor from "../components/CustomCursor";
+// import CustomCursor from "../components/CustomCursor";
 
 const Layout = () => {
   useEffect(() => {
@@ -20,7 +20,7 @@ const Layout = () => {
     <>
       <Header />
       <ScrollToTop />
-      <CustomCursor /> 
+      {/* <CustomCursor />  */}
       <Outlet />
       <Footer />
     </>
