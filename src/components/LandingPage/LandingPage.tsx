@@ -1,9 +1,9 @@
 import { motion } from "motion/react";
-import { useEffect, useRef } from "react";
+// import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
-import ParallaxImage from "../ParallaxImage";
+// import ParallaxImage from "../ParallaxImage";
 import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -37,28 +37,28 @@ const LandingPage = () => {
     );
     
     // SplitText animation for firstText
-      if (headingRef.current) {
-        const split = new SplitText(headingRef.current, {
-          type: "chars,words",
-          mask: 'chars',
-          charsClass: "char-js",
-          wordsClass: "word-js",
-          autoSplit: true,
-          onSplit: (self) => {
-            gsap.from(self.chars, {
-              scrollTrigger: {
-                start: 'top bottom',
-                trigger:  headingRef.current,
-              },
-              duration: 1.8,
-              yPercent: 100,
-              delay: 0.5,
-              ease: 'expo.out',
-              stagger: 0.06,
-            });
-          }
-        });
-      }
+      // if (headingRef.current) {
+      //   const split = new SplitText(headingRef.current, {
+      //     type: "chars,words",
+      //     mask: 'chars',
+      //     charsClass: "char-js",
+      //     wordsClass: "word-js",
+      //     autoSplit: true,
+      //     onSplit: (self) => {
+      //       gsap.from(self.chars, {
+      //         scrollTrigger: {
+      //           start: 'top bottom',
+      //           trigger:  headingRef.current,
+      //         },
+      //         duration: 1.8,
+      //         yPercent: 100,
+      //         delay: 0.5,
+      //         ease: 'expo.out',
+      //         stagger: 0.06,
+      //       });
+      //     }
+      //   });
+      // }
     
     // return () => clearInterval(timer);
   }, [])
