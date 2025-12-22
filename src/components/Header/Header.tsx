@@ -26,7 +26,7 @@ const Header = () => {
         menuLinksRef.current,
         {
           opacity: 0,
-          y: -100,
+          y: 100,
           stagger: 0.05,
           duration: 0.75,
           ease: "power1.inOut",
