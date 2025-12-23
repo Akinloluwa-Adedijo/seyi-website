@@ -6,6 +6,7 @@ import MusicCard from "../../components/MusicCard/MusicCard";
 import Publications from "../../components/Publications/Publications";
 import { useRef } from "react";
 import useDocumentTitle from "../../utils/useDocumentTitle.js";
+import { main } from "motion/react-client";
 
 const homeMusic = [
   {
@@ -48,16 +49,16 @@ const Home = () => {
       ref={homeRef}
       className="flex flex-col items-center gap-20 overflow-hidden w-full "
     >
-      <motion.div
-        ref={homeRef}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        variants={opacity}
-        className="flex flex-col items-center gap-30 md:gap-50 overflow-hidden "
-      >
+        {/* <motion.div
+          ref={homeRef}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          variants={opacity}
+          className="flex flex-col items-center gap-30 md:gap-50 overflow-hidden "
+        > */}
         <LandingPage />
         <Description />
-        <section className="flex flex-col gap-100 w-full">
+        <section className="flex flex-col gap-30 w-full pt-20">
           <h2 className="font-instrument text-5xl md:text-7xl lg:text-8xl italic text-center">
             Music
           </h2>
@@ -84,7 +85,7 @@ const Home = () => {
           </h2>
           <Publications />
         </section>
-      </motion.div>
+      {/* </motion.div> */}
     </main>
   );
 };

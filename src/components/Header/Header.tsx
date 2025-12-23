@@ -5,6 +5,8 @@ import gsap from "gsap";
 import { Link } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 
+gsap.registerPlugin(useGSAP);
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -54,7 +56,7 @@ const Header = () => {
 
   return (
     <header>
-      <nav className="flex justify-between items-center p-5 fixed w-full">
+      <nav className="flex justify-between items-center p-5 fixed  w-full z-1">
         <Link to="/">
           <img
             src="/seyi-logo.svg"

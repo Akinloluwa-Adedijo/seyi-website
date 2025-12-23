@@ -5,7 +5,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 // import ParallaxImage from "../ParallaxImage";
 import { useGSAP } from "@gsap/react";
-gsap.registerPlugin(ScrollTrigger, SplitText);
+import SeyiLogo from "../SeyiLogo/SeyiLogo";
+gsap.registerPlugin(useGSAP,ScrollTrigger, SplitText);
 
 const images = [
   { src: "/images/landing/home-1.jpg", alt: "Carousel Image 1" },
@@ -16,76 +17,36 @@ const images = [
 ];
 
 const LandingPage = () => {
-  const headingRef = useRef<HTMLHeadingElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
-  const textContainerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-
-      
-    
     // Initial page load animation
     const tl = gsap.timeline();
     tl.fromTo(imageRef.current, 
-      { scale: 0.5, opacity: 0 },
+      { scale: 0, opacity: 0 },
       { scale: 1, opacity: 1, duration: 1.5, ease: "power3.out" }
     )
-    .fromTo(textContainerRef.current,
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
-      "-=0.5" // Start 0.5s before image animation ends
-    );
-    
-    // SplitText animation for firstText
-      // if (headingRef.current) {
-      //   const split = new SplitText(headingRef.current, {
-      //     type: "chars,words",
-      //     mask: 'chars',
-      //     charsClass: "char-js",
-      //     wordsClass: "word-js",
-      //     autoSplit: true,
-      //     onSplit: (self) => {
-      //       gsap.from(self.chars, {
-      //         scrollTrigger: {
-      //           start: 'top bottom',
-      //           trigger:  headingRef.current,
-      //         },
-      //         duration: 1.8,
-      //         yPercent: 100,
-      //         delay: 0.5,
-      //         ease: 'expo.out',
-      //         stagger: 0.06,
-      //       });
-      //     }
-      //   });
-      // }
-    
-    // return () => clearInterval(timer);
   }, [])
 
   return (
     <section className="w-full min-h-screen pt-24 flex flex-col items-center justify-center">
-      
-      {/* TODO: need to convert the h1 to an svg tro allow for bewttwr scaling */}
-              <h1 ref={headingRef} className="font-black uppercase text-fg overflow-hidden" 
-              // style={{ fontSize: 'clamp(5vw, 15vw, 13.4375em)' }}
-              style={{ fontSize: '12em' }}
-              // style={{ fontSize: '5em' }}
-              >Șèyí,ThePoet</h1>
 
-              {/* TODO convert this image section into m,arquee of the images or video reel of seyi performing inside the images array so it adds interest */}
-  <motion.img
-          ref={imageRef}
-          src={images[0].src}
-          alt={images[0].alt}
-          initial={{ opacity: 0, scale: 0 }}  
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="w-full h-full object-cover"
-        /> 
-  {/* https://gsap.com/community/forums/topic/43269-image-slider-using-clip-path/ */}
-  {/* bring back animated image slider */}
-  {/* slider positioned across the entire screen and the h1 is positioned at the bottom of the slider */}
+      <div className="w-full h-full px-5 py-2 overflow-hidden">
+        <SeyiLogo className="w-full h-full"/>
+        <h1 aria-hidden="true" className="sr-only">Șèyí,ThePoet</h1>
+      </div>
+      <div className="w-full h-full relative">
+        <img ref={imageRef} src={images[0].src} alt={images[0].alt} />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        >
+          {/* Change to round seyi button */}
+          <a href="https://twitch.tv/seyi" className="text-4xl font-bold text-bg">Stream GODOT</a>
+        </motion.div>
+      </div>
     </section>
   );
 };
