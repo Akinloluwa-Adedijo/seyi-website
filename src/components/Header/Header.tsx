@@ -1,6 +1,6 @@
 
 import { useEffect, useRef, useState } from "react";
-import { navLinks, footerLinks } from "../../data/data";
+import { navLinks, footerLinks } from "../../data/navData";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
 import { useGSAP } from "@gsap/react";

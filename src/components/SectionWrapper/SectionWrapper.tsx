@@ -25,12 +25,12 @@ const SectionWrapper = ({ title, children }: SectionWrapperProps) => {
     <main className="py-30">
       <motion.section
         ref={sectionRef}
-        className="flex flex-col items-center gap-10 p-5 overflow-hidden"
+        className="flex flex-col items-start gap-10 p-5 overflow-hidden"
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         variants={opacity}
       >
-        <h2 className=" font-instrument text-4xl sm:text-[10vw] text-center text-yellow-300 uppercase">
+        <h2 className=" font-instrument text-4xl sm:text-[10vw] text-fg">
           {title}
         </h2>
 

@@ -1,7 +1,12 @@
+import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
+import { aboutData } from "../../data/about";
+
 export default function About() {
     return (
-        <section>
-            <h1>About</h1>
-        </section>
+        <SectionWrapper title="About the Poet">
+            {aboutData.map((item, index) => (
+                <p key={index} style={{ fontSize: "clamp(24px, 5vw, 64px)" }} className="font-bold">{item}</p>
+            ))}
+        </SectionWrapper>
     );
 }
