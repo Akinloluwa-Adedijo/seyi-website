@@ -130,7 +130,7 @@ button{
   padding: 1.25rem 1.25rem 0 1.25rem;
 }
 
-.menu-link
+.menu-link a, .menu-link
 {
   /* display: block; */
   position: relative;
@@ -140,9 +140,8 @@ button{
   display: block;
 }
 .menu-link a{
-  font-size: clamp(48px, 4em, 6em);
+  /* font-size: clamp(48px, 4em, 6em); */
   /* font-size: min(4em, 48px); */
-    line-height: 1;
     will-change: transform;
     overflow: hidden;
 }
@@ -154,6 +153,29 @@ button{
 /* .menu-link, .menu-social{
 clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 100%);  
 } */
+
+.menu-link-heading {
+  z-index: 1;
+  text-transform: uppercase;
+  font-size: clamp(48px, 3.5em, 6em);
+  /* font-size: min(4em, 48px); */
+  font-weight: 900;
+    line-height: 1;
+    transition: transform .55s cubic-bezier(.65, .05, 0, 1);
+    position: relative;
+}
+
+.menu-link-heading{ text-shadow: 0px 1em 0px var(--color-bg); }
+.menu-link-bg {
+  z-index: 0;
+  background-color: var(--color-fg);
+  transform-origin: 50% 100%;
+  transform-style: preserve-3d;
+  transition: transform .55s cubic-bezier(.65, .05, 0, 1);
+  position: absolute;
+  inset: 0%;
+  transform: scale3d(1, 0, 1);
+}
 
 
 .menu-overlay{top: 0;
@@ -212,3 +234,12 @@ clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 100%);
       width: 100%;
       object-fit: cover;
     }
+
+
+@media (hover:hover){
+  
+
+  /* Menu Large Links */
+  .menu-link:hover .menu-link-heading{ transform: translate(0px, -1em); transition-delay: 0.1s; }
+  .menu-link:hover .menu-link-bg{ transform: scale(1,1) }
+}

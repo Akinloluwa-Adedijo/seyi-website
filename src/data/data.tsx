@@ -19,7 +19,7 @@ export const navLinks = [
   {title: "Music", href: "/music"},
   {title: "Press", href: "/press"},
   {title: "Gallery", href: "/gallery"},
-  {title: "Poems & Reviews", href: "/poems-reviews"},
+  {title: "Poems", href: "/poems-reviews"},
   {title: "Updates", href: "/updates"},
   {title: "About", href: "/about"},
   {title: "Contact", href: "/contact"},

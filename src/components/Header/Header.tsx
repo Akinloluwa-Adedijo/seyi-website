@@ -98,9 +98,9 @@ const Header = () => {
                     if (el) menuLinksRef.current[index] = el;
                   }}
                   onClick={() => setIsMenuOpen(false)} 
-                  className="uppercase font-black"
                 >
-                  {link.title}
+                  <p className="menu-link-heading">{link.title}</p>
+                  <div className="menu-link-bg"/>
                 </Link>
             </div>
             ))}
