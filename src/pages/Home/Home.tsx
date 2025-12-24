@@ -6,6 +6,7 @@ import MusicCard from "../../components/MusicCard/MusicCard";
 import Publications from "../../components/Publications/Publications";
 import { useRef } from "react";
 import useDocumentTitle from "../../utils/useDocumentTitle.js";
+import { Link } from "react-router-dom";
 
 const homeMusic = [
   {
@@ -67,8 +68,11 @@ const Home = () => {
             year={music.year}
             imgSrc={music.imgSrc}
             imgAlt={music.imgAlt}
+            width={music.imgWidth}
+            height={music.imgHeight}
             href={music.href}
             linkTitle={music.linkTitle}
+            className="w-full h-[500px] lg:min-h-screen"
           />
           );
         })}
@@ -76,9 +80,9 @@ const Home = () => {
       <section className="w-full flex flex-col gap-10 p-5 pb-20">
         <div className="flex items-end justify-between">
           <h2 className="font-instrument text-5xl md:text-7xl lg:text-8xl italic">
-            Publications
+            In the Press
           </h2>
-          <button>See More</button>
+          <Link to="/press">See More</Link>
         </div>
         <Publications />
       </section>

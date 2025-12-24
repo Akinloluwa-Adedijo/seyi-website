@@ -1,4 +1,4 @@
-// import CustomImage from "../CustomImage/CustomImage";
+import CustomImage from "../CustomImage/CustomImage";
 interface publicationItem {
   title: string;
   description: string;
@@ -116,9 +116,17 @@ const PublicationCard = ({ publication }: { publication: publicationItem }) => {
   return (
     <>
       <div className="flex flex-col gap-3 p-5 border-2 border-fg hover:scale-105 hover:border-accent transition-all duration-300 ease-out">
-        <div className="img-container h-[350px]" data-title={publication.title}>
+        {/* <div className="img-container h-[350px]" data-title={publication.title}>
           <img src={publication.imgSrc} alt={publication.imgAlt} />
-        </div>
+        </div> */}
+        <CustomImage
+          imgSrc={publication.imgSrc}
+          imgAlt={publication.imgAlt}
+          width={publication.imgWidth}
+          height={publication.imgHeight}
+          classname="h-[350px]"
+          // linkTitle={publication.title}
+        />
         <div className="flex flex-col gap-1 text-xl">
           <div>
             <p className="font-black uppercase">{publication.title}</p>

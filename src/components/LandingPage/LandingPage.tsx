@@ -5,13 +5,13 @@ import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 import SeyiLogo from "../SeyiLogo/SeyiLogo";
 gsap.registerPlugin(useGSAP,ScrollTrigger, SplitText);
-
+import CustomImage from "../CustomImage/CustomImage";
 const images = [
-  { src: "/images/landing/home-1.jpg", alt: "Carousel Image 1" },
-  { src: "/images/landing/home-2.jpg", alt: "Carousel Image 2" },
-  { src: "/images/landing/home-3.jpg", alt: "Carousel Image 3" },
-  { src: "/images/landing/home-4.jpg", alt: "Carousel Image 4" },
-  { src: "/images/landing/home-5.jpg", alt: "Carousel Image 5" },
+  { src: "/images/landing/home-1.jpg", alt: "Carousel Image 1", width: 1920, height: 1080 },
+  { src: "/images/landing/home-2.jpg", alt: "Carousel Image 2", width: 1920, height: 1080 },
+  { src: "/images/landing/home-3.jpg", alt: "Carousel Image 3", width: 1920, height: 1080 },
+  { src: "/images/landing/home-4.jpg", alt: "Carousel Image 4", width: 1920, height: 1080 },
+  { src: "/images/landing/home-5.jpg", alt: "Carousel Image 5", width: 1920, height: 1080 },
 ];
 
 const LandingPage = () => {
@@ -32,11 +32,15 @@ const LandingPage = () => {
         <SeyiLogo className="w-full h-full"/>
         <h1 aria-hidden="true" className="sr-only">Șèyí,ThePoet</h1>
       </div>
-      <div className="img-container min-h-screen">
-        <img ref={imageRef} src={images[0].src} alt={images[0].alt} />
-          {/* Change to round seyi button */}
-          <a href="https://seyithepoet.bandcamp.com/album/godot-act-1-a-performance-of-self" className="text-5xl font-bold  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-accent">Stream GODOT</a>
-      </div>
+      <CustomImage 
+        imageRef={imageRef}
+        imgSrc={images[0].src}
+        imgAlt={images[0].alt}
+        width={images[0].width}
+        height={images[0].height}
+        classname="min-h-screen"
+        linkTitle="Stream GODOT"
+      />
     </section>
   );
 };

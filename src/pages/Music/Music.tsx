@@ -41,22 +41,13 @@ const musicItems = [
   },
 ];
 const Music = () => {
-  const remMusicItems = musicItems.filter((item) => item.id !== 1);
+  // const remMusicItems = musicItems.filter((item) => item.id !== 1);
   useDocumentTitle("Ṣèyí,ThePoet | Music");
 
   return (
     <SectionWrapper title="Music">
-      <MusicCard
-        title={musicItems[0].title}
-        year={musicItems[0].year}
-        imgSrc={musicItems[0].imgSrc}
-        imgAlt={musicItems[0].imgAlt}
-        href={musicItems[0].href}
-        linkTitle={musicItems[0].linkTitle}
-      />
-
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-        {remMusicItems.map((item) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {musicItems.map((item) => (
           <MusicCard
             key={item.id}
             title={item.title}
