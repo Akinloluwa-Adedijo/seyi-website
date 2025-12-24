@@ -3,14 +3,13 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import {useGSAP} from "@gsap/react";
-import ParallaxImage from "../ParallaxImage";
-import Copy from "../Copy.tsx/Copy";
 gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
 const phrase =
   "Șèyí,ThePoet is a passionate spoken word artist, model and creative director; who brings raw emotion and profound insight to the stage. His performances, rich with themes of mental health and the human experience, have touched hearts and sparked conversations.";
 
 const Description = () => {
   const charsRef = useRef<HTMLParagraphElement>(null);
+  const h2Ref = useRef<HTMLHeadingElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -38,42 +37,19 @@ const Description = () => {
       }
     });
 
-
   }, []);
   return (
-    // <section className="flex flex-col md:flex-row w-full min-h-[50vh] text-fg gap-5" ref={containerRef}>
-    <section className="flex flex-col  w-full text-fg p-5" ref={containerRef}>
-      {/* Left Content Side */}
-      {/* <div className="w-full md:w-1/2 flex flex-col justify-between px-5 gap-8"> */}
-        <div>
-          <h2 className="font-instrument text-5xl md:text-7xl lg:text-8xl italic">
+    <section className="flex flex-col gap-5 w-full text-fg p-5" ref={containerRef}>
+            <h2 className="font-instrument text-[2.5em] italic" ref={h2Ref}>
             About
           </h2>
-        </div>
-
-        <div className="flex flex-col justify-between gap-8 mt-auto">
-          {/* <p
+          <p
             ref={charsRef}
-            // className="max-w-xl"
             style={{ fontSize: "clamp(24px, 5vw, 64px)" }}
             className="font-bold"
           >
             {phrase}
-          </p> */}
-
-           <Copy animateOnScroll delay={0.5}>
-        <p            // className="max-w-xl"
-            style={{ fontSize: "clamp(24px, 5vw, 4em)", lineHeight: "1.25"}}
-            className="font-bold h-full"
-            
-          >
-            {phrase}
           </p>
-      </Copy>
-
-        </div>
-     
-
     </section>
   );  
 };

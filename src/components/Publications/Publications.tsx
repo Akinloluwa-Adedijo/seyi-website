@@ -1,6 +1,7 @@
 import CustomImage from "../CustomImage/CustomImage";
 interface publicationItem {
   title: string;
+  description: string;
   imgSrc: string;
   imgAlt: string;
   imgWidth: number;
@@ -10,6 +11,7 @@ interface publicationItem {
 const publications: publicationItem[] = [
   {
     title: "Daily Hive",
+    description: "",
     href: "https://dailyhive.com/canada/jimpinu-photography-black-history-month",
     imgSrc: "/images/publication_images/publication-1.webp",
     imgAlt: "img text goes",
@@ -18,6 +20,7 @@ const publications: publicationItem[] = [
   },
   {
     title: "Gmaro Magazine",
+    description: "",
     href: "https://www.magcloud.com/browse/issue/2388706",
     imgSrc: "/images/publication_images/publication-2.webp",
     imgAlt: "img text goes",
@@ -26,6 +29,7 @@ const publications: publicationItem[] = [
   },
   {
     title: "Pakistan in Voogue",
+    description: "",
     href: "https://pakistaninvogue.com/vancouver-fashion-week-2022/",
     imgSrc: "/images/publication_images/publication-3.webp",
     imgAlt: "img text goes",
@@ -34,6 +38,7 @@ const publications: publicationItem[] = [
   },
   {
     title: "Vogue MX",
+    description: "",
     href: "https://www.vogue.mx/moda/galeria/vancouver-fashion-week-2022-como-la-plataforma-de-disenadores-responsables",
     imgSrc: "/images/publication_images/publication-4.webp",
     imgAlt: "img text goes",

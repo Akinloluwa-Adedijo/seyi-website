@@ -89,7 +89,7 @@ const Header = () => {
           </button>
         </div>
 
-          <div className="menu-items flex flex-col justify-center flex-1 gap-2  px-5">
+          <div className="menu-items flex flex-col justify-center flex-1 gap-1 px-5">
             {navLinks.map((link, index) => (
               <div className="menu-link" key={index}>
                 <Link
@@ -116,3 +116,8 @@ const Header = () => {
 };
 
 export default Header; 
+
+// https://codepen.io/cbolson/pen/EaVYoVd FOR NAV LINKS
+// https://codepen.io/cbolson/pen/emYWrMg FOR MENU
+// https://codepen.io/StratoDev89/pen/raNaZPp for gallery
+// https://codepen.io/Sahil-Saundale/pen/qEZJxPj for button anim
