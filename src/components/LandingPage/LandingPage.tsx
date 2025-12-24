@@ -28,7 +28,7 @@ const LandingPage = () => {
 
   return (
     <section className="w-full min-h-screen pt-24">
-      <div className="w-full h-full px-5 py-2 overflow-hidden">
+      <div className="w-full h-full px-5  overflow-hidden">
         <SeyiLogo className="w-full h-full"/>
         <h1 aria-hidden="true" className="sr-only">Șèyí,ThePoet</h1>
       </div>

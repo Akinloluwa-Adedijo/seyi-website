@@ -82,7 +82,7 @@ export default function Copy({children, animateOnScroll = true, delay = 0}: Copy
 
             if(textIndent && textIndent !== "0px"){
                 if(split.lines.length > 0){
-                    split.lines[0].style.paddingLeft = textIndent;
+                    (split.lines[0]as HTMLElement).style.paddingLeft = textIndent;
                 }
                 element.style.textIndent = "0";
             }

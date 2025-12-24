@@ -1,4 +1,4 @@
-import { useInView } from "motion/react";
+// import { useInView } from "motion/react";
 import Description from "../../components/Description/Description";
 import LandingPage from "../../components/LandingPage/LandingPage";
 import MusicCard from "../../components/MusicCard/MusicCard";
@@ -6,7 +6,6 @@ import MusicCard from "../../components/MusicCard/MusicCard";
 import Publications from "../../components/Publications/Publications";
 import { useRef } from "react";
 import useDocumentTitle from "../../utils/useDocumentTitle.js";
-import { motion } from "motion/react";
 
 const homeMusic = [
   {
@@ -31,23 +30,23 @@ const homeMusic = [
   },
 ];
 
-const opacity = {
-  hidden: {
-    opacity: 0,
-    y: 100,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 1, ease: [0.65, 0, 0.35, 1] },
-  },
-};
+// const opacity = {
+//   hidden: {
+//     opacity: 0,
+//     y: 100,
+//   },
+//   visible: {
+//     opacity: 1,
+//     y: 0,
+//     transition: { duration: 1, ease: [0.65, 0, 0.35, 1] },
+//   },
+// };
 const Home = () => {
   useDocumentTitle("Ṣèyí,ThePoet | Artist");
   const homeRef = useRef<HTMLDivElement>(null);
-  const inView = useInView(homeRef, {
-    once: true,
-  });
+  // const inView = useInView(homeRef, {
+  //   once: true,
+  // });
   return (
     <main
       ref={homeRef}
@@ -55,8 +54,8 @@ const Home = () => {
     >
       <LandingPage />
       <Description />
-      <section className="flex flex-col gap-5 w-full pt-20">
-        <h2 className="font-instrument text-5xl md:text-7xl lg:text-8xl italic text-center">
+      <section className="flex flex-col gap-5 w-full pt-20 p-5">
+        <h2 className="font-instrument text-5xl md:text-7xl lg:text-8xl italic">
           Music
         </h2>
 
@@ -74,10 +73,13 @@ const Home = () => {
           );
         })}
       </section>
-      <section className="w-full flex flex-col gap-10 p-5">
-        <h2 className="font-instrument text-5xl md:text-7xl lg:text-8xl italic">
-          Publications
-        </h2>
+      <section className="w-full flex flex-col gap-10 p-5 pb-20">
+        <div className="flex items-end justify-between">
+          <h2 className="font-instrument text-5xl md:text-7xl lg:text-8xl italic">
+            Publications
+          </h2>
+          <button>See More</button>
+        </div>
         <Publications />
       </section>
     </main>

@@ -18,7 +18,7 @@ const MusicCard: React.FC<MusicCardProps> = ({
   linkTitle,
 }) => {
   return (
-    <div className="flex flex-col gap-2 w-full p-5">
+    <div className="flex flex-col gap-2 w-full ">
       <a href={href} target="_blank" rel="noopener noreferrer">
         <div className="img-container h-[500px] lg:min-h-screen" data-title={linkTitle}>
           <img src={imgSrc} alt={imgAlt} />

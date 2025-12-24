@@ -5,42 +5,38 @@ import useDocumentTitle from "../../utils/useDocumentTitle.js";
 const musicItems = [
   {
     id: 1,
+    linkTitle: "Stream GODOT",
     title: "GODOT: A Performance of Self",
     year: 2025,
     imgSrc: "/gifs/fwut_viz.gif",
     imgAlt: "FWUT Visualizer",
-    imgWidth: 800,
-    imgHeight: 450,
     href: "https://seyithepoet.bandcamp.com/album/godot-act-1-a-performance-of-self",
   },
   {
     id: 2,
+    linkTitle: "Stream I will Rather Die",
     title: "I will Rather Die",
     year: 2025,
     imgSrc: "/images/music_images/godot_album_cover.webp",
     imgAlt: "Ṣèyí,ThePoet Profile Image",
-    imgWidth: 3000,
-    imgHeight: 3000,
     href: "https://seyithepoet.bandcamp.com/track/i-will-rather-die",
   },
   {
     id: 3,
+    linkTitle: "Stream I Love You",
     title: "I Love You",
     year: 2025,
     imgSrc: "/images/music_images/godot_album_cover.webp",
     imgAlt: "Ṣèyí,ThePoet Profile Image",
-    imgWidth: 3000,
-    imgHeight: 3000,
     href: "https://seyithepoet.bandcamp.com/track/i-love-you",
   },
   {
     id: 4,
+    linkTitle: "Watch Samuel?",
     title: "Samuel?",
     year: 2024,
     imgSrc: "/gifs/samuel.gif",
     imgAlt: "Ṣamuel Video Preview",
-    imgWidth: 800,
-    imgHeight: 450,
     href: "https://youtu.be/Ha2gxgRqbgM?si=ZuWOIccnviYHfEHE",
   },
 ];
@@ -55,10 +51,8 @@ const Music = () => {
         year={musicItems[0].year}
         imgSrc={musicItems[0].imgSrc}
         imgAlt={musicItems[0].imgAlt}
-        size="big"
-        imgWidth={musicItems[0].imgWidth}
-        imgHeight={musicItems[0].imgHeight}
         href={musicItems[0].href}
+        linkTitle={musicItems[0].linkTitle}
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
@@ -69,10 +63,8 @@ const Music = () => {
             year={item.year}
             imgSrc={item.imgSrc}
             imgAlt={item.imgAlt}
-            size="sm"
-            imgWidth={item.imgWidth}
-            imgHeight={item.imgHeight}
             href={item.href}
+            linkTitle={item.linkTitle}
           />
         ))}
       </div>

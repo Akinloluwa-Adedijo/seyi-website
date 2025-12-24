@@ -37,7 +37,10 @@ const Description = () => {
       }
     });
 
-  }, []);
+    return () => {
+      split.revert();
+    };
+  }, {scope: containerRef});
   return (
     <section className="flex flex-col gap-5 w-full text-fg p-5" ref={containerRef}>
             <h2 className="font-instrument text-[2.5em] italic" ref={h2Ref}>
