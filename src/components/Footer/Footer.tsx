@@ -32,11 +32,12 @@ const listenLinks = [
     name: "Bandcamp",
     href: "https://seyithepoet.bandcamp.com/",
   },
-
   {
-    name: "Youtube",
-    href: "https://www.youtube.com/@seyithepoet.mp4",
+    name: "Spotify",
+    href: "https://open.spotify.com/album/0ZI2UGrhkIBbBMdA08Wqq3?si=ky9LGwn8SSaNUGcfhLkRBQ",
   },
+{name: "Apple Music", href: "https://music.apple.com/ca/album/godot-a-performance-of-self-ep/1856356056"},
+{name: "Youtube", href: "https://www.youtube.com/@seyithepoet.mp4"},
 ];
 
 interface RenderLinkProps {
@@ -52,6 +53,8 @@ const RenderLinks = ({ title, links }: RenderLinkProps) => {
         <a
           key={index}
           href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-black-950 hover:text-black-900"
         >
           {link.name}
