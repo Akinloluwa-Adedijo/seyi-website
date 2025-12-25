@@ -8,7 +8,7 @@ import Layout from "./layouts/Layout";
 import Error from "./pages/Error/Error";
 import Home from "./pages/Home/Home";
 import Music from "./pages/Music/Music";
-import Offstage from "./pages/OffStage/Offstage";
+import Offstage from "./components/Offstage";
 import Updates from "./pages/Updates/Updates";
 import Contact from "./pages/Contact/Contact";
 import { AnimatePresence } from "motion/react";

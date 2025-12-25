@@ -69,7 +69,7 @@ const Music = () => {
             imgAlt={item.imgAlt}
             href={item.href}
             linkTitle={item.linkTitle}
-            className={"w-full h-[500px]"}
+            className={"w-full h-[500px] lg:min-h-[700px]"}
           />
         ))}
       </div>

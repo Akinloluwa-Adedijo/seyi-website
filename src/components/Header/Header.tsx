@@ -11,7 +11,9 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuOverlayRef = useRef<HTMLDivElement>(null);
+  const menuNavRef = useRef<HTMLDivElement>(null);
   const menuLinksRef = useRef<HTMLAnchorElement[]>([]);
+  const menuSocialRef = useRef<HTMLAnchorElement[]>([]);
 
   const tl = useRef<gsap.core.Timeline | null>(null);
 
@@ -19,6 +21,11 @@ const Header = () => {
     if (!menuOverlayRef.current) return;
 
     tl.current = gsap.timeline({ paused: true })
+      .from(menuNavRef.current, {
+        opacity: 0,
+        duration: 0.55,
+        ease: "power1.inOut",
+      })
       .to(menuOverlayRef.current, {
         duration: 1,
         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
@@ -42,6 +49,24 @@ const Header = () => {
         },
         "<",
       )
+      .fromTo(
+          menuSocialRef.current,
+          {
+            opacity: 0,
+            y: 100,
+            stagger: 0.05,
+            duration: 0.75,
+            ease: "power1.inOut",
+          },
+          {
+            opacity: 1,
+            y: 0,
+            stagger: 0.05,
+            duration: 0.75,
+            ease: "power1.inOut",
+          },
+          "<",
+        )
   }, { scope: menuOverlayRef });
 
   useEffect(() => {
@@ -73,7 +98,7 @@ const Header = () => {
       </nav>
 
       <div className="menu-overlay h-full flex flex-col justify-between" ref={menuOverlayRef}>
-        <div className="menu-nav flex justify-between items-center">
+        <div className="menu-nav flex justify-between items-center" ref={menuNavRef}>
           <Link to="/">
             <img
               src="/seyi-logo.svg"
@@ -105,9 +130,11 @@ const Header = () => {
             </div>
             ))}
           </div>
-          <div className="menu-footer flex flex-wrap gap-5 p-5">
+          <div className="menu-social flex flex-wrap gap-5 p-5">
             {footerLinks.map((link, index) => (
-                <a href={link.href} key={index} className="font-medium text-fg text-link">{link.title}</a>
+                <Link to={link.href} key={index} target="_blank" rel="noopener noreferrer" className="font-medium text-fg text-link" ref={(el) => {
+                  if (el) menuSocialRef.current[index] = el;
+                }}>{link.title}</Link>
             ))}
           </div>
       </div>

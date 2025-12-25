@@ -1,9 +1,9 @@
 import { useState } from "react";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import MusicReviews from "../../components/MusicReviews/MusicReviews";
-import ReviewModal from "../../components/ReviewModal/ReviewModal";
-import Poems from "../../components/Poems/Poems";
-import useDocumentTitle from "../../utils/useDocumentTitle";
+import SectionWrapper from "./SectionWrapper/SectionWrapper";
+import MusicReviews from "./MusicReviews/MusicReviews";
+import ReviewModal from "./ReviewModal/ReviewModal";
+import Poems from "./Poems/Poems";
+import useDocumentTitle from "../utils/useDocumentTitle";
 
 export interface ReviewItem {
   id: number;

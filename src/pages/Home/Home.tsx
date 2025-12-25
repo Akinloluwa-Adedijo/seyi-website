@@ -55,7 +55,7 @@ const Home = () => {
     >
       <LandingPage />
       <Description />
-      <section className="flex flex-col gap-5 w-full pt-20 p-5">
+      <section className="flex flex-col gap-20 w-full pt-20 p-5">
         <h2 className="font-instrument text-5xl md:text-7xl lg:text-8xl italic">
           Music
         </h2>
