@@ -32,7 +32,7 @@ const CustomImage = ({
     // </div>
     <div className={`img-container ${classname}`} data-title={linkTitle} ref={containerRef}>
           <img ref={imageRef} src={imgSrc} alt={imgAlt} width={width} height={height} />
-          <a href={linkTitle} className="text-5xl font-bold  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-accent">{linkTitle}</a>
+          <a href={linkTitle} className="text-5xl font-bold absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-accent">{linkTitle}</a>
         </div>
   );
 };

@@ -11,7 +11,6 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuOverlayRef = useRef<HTMLDivElement>(null);
-  const menuNavRef = useRef<HTMLDivElement>(null);
   const menuLinksRef = useRef<HTMLAnchorElement[]>([]);
   const menuSocialRef = useRef<HTMLAnchorElement[]>([]);
 
@@ -21,11 +20,6 @@ const Header = () => {
     if (!menuOverlayRef.current) return;
 
     tl.current = gsap.timeline({ paused: true })
-      .from(menuNavRef.current, {
-        opacity: 0,
-        duration: 0.55,
-        ease: "power1.inOut",
-      })
       .to(menuOverlayRef.current, {
         duration: 1,
         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
@@ -81,7 +75,7 @@ const Header = () => {
 
   return (
     <header>
-      <nav className="flex justify-between items-center p-5 fixed  w-full z-1">
+      <nav className="flex justify-between items-center p-5 fixed  w-full z-5">
         <Link to="/">
           <img
             src="/seyi-logo.svg"
@@ -98,7 +92,7 @@ const Header = () => {
       </nav>
 
       <div className="menu-overlay h-full flex flex-col justify-between" ref={menuOverlayRef}>
-        <div className="menu-nav flex justify-between items-center" ref={menuNavRef}>
+        <div className="menu-nav flex justify-between items-center">
           <Link to="/">
             <img
               src="/seyi-logo.svg"

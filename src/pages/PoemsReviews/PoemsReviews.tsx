@@ -22,9 +22,10 @@ export default function PoemsReviews() {
   return (
     <SectionWrapper title="Poems & Reviews">
       <section className="flex flex-col w-full">
-        <div className="grid grid-cols-3 sm:grid-cols-4 w-full uppercase p-2 gap-5 font-instrument text-xl sm:text-2xl border-b-2 border-accent pb-2 mb-2">
+        <div className="grid grid-cols-3 sm:grid-cols-4 w-full uppercase p-2 gap-5  text-xl font-medium border-b-2 border-accent pb-2 mb-2">
           <p>Name</p>
-          <p>Artist / Theme</p>
+          {/* <p>Artist / Theme</p> */}
+          <p>Type</p>
           <p>Year</p>
           <span className="hidden sm:block"></span>
         </div>

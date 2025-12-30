@@ -119,6 +119,21 @@ body {
   }
 }
 
+.disable-scrollbars {
+  /* Hide scrollbar for Firefox */
+  scrollbar-width: none;
+  /* Hide scrollbar for IE and Edge */
+  -ms-overflow-style: none; 
+}
+
+/* For Chrome, Safari, Opera, and other WebKit browsers */
+.disable-scrollbars::-webkit-scrollbar {
+  display: none;
+  width: 0; /* Ensures no empty gap is left behind */
+  height: 0; /* Hides horizontal scrollbar in WebKit */
+}
+
+
 p{
   line-height: 120%;
 }

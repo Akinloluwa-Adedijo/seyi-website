@@ -14,7 +14,7 @@ export const PublicationCard = ({ publication }: { publication: publicationItem 
           imgAlt={publication.imgAlt}
           width={publication.imgWidth}
           height={publication.imgHeight}
-          classname="h-[500px]"
+          classname="h-[300px]"
           // linkTitle={publication.title}
           />
         <div className="flex flex-col gap-1 text-xl">

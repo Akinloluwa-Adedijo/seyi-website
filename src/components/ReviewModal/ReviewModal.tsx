@@ -3,6 +3,7 @@ import type { ReviewItem } from "../Offstage";
 import CustomImage from "../CustomImage/CustomImage";
 import type { musicReviewItem } from "../../data/musicReviews";
 import type { poemItem } from "../../data/poems";
+import { useLenis } from "../../contexts/LenisContext";
 
 import { AnimatePresence, motion } from "motion/react";
 
@@ -13,32 +14,40 @@ interface ReviewModalProps {
 }
 
 const ReviewModal = ({ isOpen, onClose, item }: ReviewModalProps) => {
+  const { lenis } = useLenis();
+
   // Prevent scrolling on the body when the modal is open
   useEffect(() => {
     if (isOpen) {
+      lenis?.stop();
       document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto";
+      lenis?.start();
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     }
 
     return () => {
-      document.body.style.overflow = "auto";
+      lenis?.start();
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     };
-  }, [isOpen]);
+  }, [isOpen, lenis]);
 
   const bezier = [0.83, 0, 0.17, 1];
 
   return (
     <AnimatePresence>
       {isOpen && item && (
-        <section className="fixed inset-0 z-50 flex justify-end">
+        <section className="fixed inset-0 z-25 overflow-hidden flex justify-end">
           {/* backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4, ease: bezier }}
-            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/50"
             onClick={onClose}
           />
 
@@ -48,18 +57,23 @@ const ReviewModal = ({ isOpen, onClose, item }: ReviewModalProps) => {
             animate={{ x: "0%" }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.4, ease: bezier }}
-            className="relative bg-yellow-300 w-full max-w-2xl h-full overflow-y-auto z-10 p-5 md:p-10 text-black shadow-2xl"
+            className="fixed bg-accent w-full max-w-2xl flex flex-col overflow-hidden z-100 p-5 text-fg h-full top-0 right-0 md:h-auto md:top-5 md:bottom-5 md:right-5 rounded-3xl"
           >
-            <button
-              onClick={onClose}
-              aria-label="Close Modal"
-              className="text-lg uppercase font-medium cursor-pointer hover:text-black-800"
-            >
-              Close
-            </button>
+            <div className="flex-none">
+              <button
+                onClick={onClose}
+                aria-label="Close Modal"
+                className="text-lg uppercase font-medium cursor-pointer"
+              >
+                Close
+              </button>
+            </div>
 
             {/* content */}
-            <div className="py-10">
+            <div
+              className="flex-1 overflow-y-auto py-10 disable-scrollbars"
+              data-lenis-prevent
+            >
               <div className="py-8">
                 <p className="text-4xl sm:text-7xl uppercase font-black py-2">
                   {item.name}

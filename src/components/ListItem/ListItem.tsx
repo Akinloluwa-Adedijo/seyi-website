@@ -41,12 +41,12 @@ const ListItem = ({ onItemClick, item }: ListItemProps) => {
       onMouseLeave={animateOut}
       onClick={() => onItemClick(item)}
     >
-      <li className="z-10 font-medium">{item.name}</li>
-      <li className="z-10 font-medium">
-        {isReview ? item.artist : item.theme}
+      <li className="z-3 font-medium">{item.name} {item.type === "review" &&  "by " + item.artist}</li>
+      <li className="z-3 font-medium">
+        {item.type}
       </li>
-      <li className="z-10 font-medium">{item.released}</li>
-      <li className="hidden sm:block sm:text-right read-text z-10 font-medium">
+      <li className="z-3 font-medium">{item.released}</li>
+      <li className="hidden sm:block sm:text-right read-text z-3 font-medium">
         {isReview ? "Read Review" : "Read Poem"}
       </li>
       <div className="background-outer pointer-events-none" ref={outer}>
