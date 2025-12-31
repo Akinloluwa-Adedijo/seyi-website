@@ -1,3 +1,11 @@
+export type ShootImageType = {
+    id: number;
+    link_title: string;
+    src: string;
+    title: string;
+    color: string;
+}
+
 export const shootImages = [
   {
     id: 1,

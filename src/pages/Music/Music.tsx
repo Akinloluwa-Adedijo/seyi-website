@@ -1,8 +1,8 @@
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import MusicCard from "../../components/MusicCard/MusicCard";
 import useDocumentTitle from "../../utils/useDocumentTitle.js";
+import { MusicCard } from "../../components/MusicCard/MusicCard";
 
-const musicItems = [
+export const musicItems = [
   {
     id: 1,
     linkTitle: "Stream GODOT",
@@ -13,6 +13,8 @@ const musicItems = [
     imgWidth: 800,
     imgHeight: 450,
     href: "https://seyithepoet.bandcamp.com/album/godot-act-1-a-performance-of-self",
+    cursorTitle: "Listen to FWUT",
+    onHome: true,
   },
   {
     id: 2,
@@ -24,6 +26,7 @@ const musicItems = [
     imgWidth: 3000,
     imgHeight: 3000,
     href: "https://seyithepoet.bandcamp.com/track/i-will-rather-die",
+    cursorTitle: "Listen to I will Rather Die",
   },
   {
     id: 3,
@@ -35,6 +38,7 @@ const musicItems = [
     imgWidth: 3000,
     imgHeight: 3000,
     href: "https://seyithepoet.bandcamp.com/track/i-love-you",
+    cursorTitle: "Listen to I Love You",
   },
   {
     id: 4,
@@ -46,13 +50,16 @@ const musicItems = [
     imgWidth: 800,
     imgHeight: 450,
     href: "https://youtu.be/Ha2gxgRqbgM?si=ZuWOIccnviYHfEHE",
+    cursorTitle: "Watch Samuel?",
+    onHome: true,
   },
 ];
 
 
 
+
+
 const Music = () => {
-  // const remMusicItems = musicItems.filter((item) => item.id !== 1);
   useDocumentTitle("Ṣèyí,ThePoet | Music");
 
   return (
@@ -69,7 +76,7 @@ const Music = () => {
             imgAlt={item.imgAlt}
             href={item.href}
             linkTitle={item.linkTitle}
-            className={"w-full h-[500px] lg:min-h-[700px]"}
+            // className={"aspect-square"}
           />
         ))}
       </div>

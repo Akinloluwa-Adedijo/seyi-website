@@ -210,24 +210,21 @@ const UpdateCard = ({ onItemClick }: UpdateCardProps) => {
   return (
     <>
       {updatesData.map((update) => (
-        <div className="flex flex-col gap-3" key={update.id}>
+        <div className="flex flex-col gap-3 p-2 border-2 border-transparent hover:scale-105 hover:border-accent transition-all duration-300 ease-out" key={update.id}>
           <CustomImage
             imgSrc={update.cover}
             imgAlt={update.coverAlt}
             width={update.coverWidth}
             height={update.coverHeight}
-            classname={update.coverClassname}
+            classname={`${update.coverClassname} h-[300px]`}
           />
-          <div className="flex flex-col gap-1 text-xl">
-            <p>{update.title}</p>
-            <div onClick={() => onItemClick(update)}>
-              <a
-                href="#"
-                className="underline hover:no-underline text-black-300 hover:text-black-50 transition-colors ease-in-out duration-200"
+          <div className="flex flex-col items-start gap-1">
+            <p className="uppercase font-black text-xl">{update.title}</p>
+              <button
+                className="underline hover:no-underline text-fg transition-colors ease-in-out duration-200" onClick={() => onItemClick(update)}
               >
                 View Details
-              </a>
-            </div>
+              </button>
           </div>
         </div>
       ))}

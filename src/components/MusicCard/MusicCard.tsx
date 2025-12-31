@@ -1,5 +1,4 @@
 import type React from "react";
-import CustomImage from "../CustomImage/CustomImage";
 
 type MusicCardProps = {
   title: string;
@@ -11,9 +10,11 @@ type MusicCardProps = {
   height: number;
   linkTitle?: string;
   className?: string;
+  cursorTitle?: string;
+  onHome?: boolean;
 };
 
-const MusicCard: React.FC<MusicCardProps> = ({
+export const MusicCard: React.FC<MusicCardProps> = ({
   title,
   imgSrc,
   imgAlt,
@@ -21,29 +22,17 @@ const MusicCard: React.FC<MusicCardProps> = ({
   href,
   width,
   height,
-  // linkTitle,
   className,
+  cursorTitle,
 }) => {
   return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className="flex flex-col gap-2 w-full">
-        {/* <div className={`img-container ${className}`} data-title={linkTitle}>
-          <img src={imgSrc} alt={imgAlt} />
-        </div> */}
-        <CustomImage 
-          imgSrc={imgSrc}
-          imgAlt={imgAlt}
-          width={width}
-          height={height}
-          classname={className}
-          // linkTitle={linkTitle}
-        />
-      <div className="flex font-medium justify-between">
-        <p className=" lg:w-[350px] text-xl" style={{ fontSize: "clamp(24px, 32px, 64px)" }}
-          >{title}</p>
-        <p className="hidden lg:block text-xl text-secondary" style={{ fontSize: "clamp(24px, 32px, 64px)" }}>{year}</p>
-       </div>
+      <a href={href} target="_blank" rel="noopener noreferrer" className="flex flex-col gap-2 w-full cursor-pointer" data-cursor={cursorTitle}>
+        <img src={imgSrc} alt={imgAlt} className={className} width={width} height={height} loading="lazy" />
+        <div className="flex font-medium justify-between">
+          <p className=" lg:w-[350px] text-xl" style={{ fontSize: "clamp(24px, 32px, 64px)" }}
+            >{title}</p>
+          <p className="hidden lg:block text-xl text-secondary" style={{ fontSize: "clamp(24px, 32px, 64px)" }}>{year}</p>
+         </div>
       </a>
   );
 };
-
-export default MusicCard;
