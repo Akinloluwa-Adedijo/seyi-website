@@ -63,7 +63,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-black-950);
+  background: var(--color-bg);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -72,7 +72,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-yellow-400);
+  background: var(--color-fg);
+}
+
+.modal-content{
+    scrollbar-width: 10px;
+    scrollbar-color: var(--color-fg) var(--color-accent);
 }
 
 /* ------------------------- Scaling System by Osmo [https://osmo.supply/] -------------------------  */
@@ -142,7 +147,7 @@ p{
 }
 
 .p-heading{
-    font-size: clamp(24px, 1.5em, 1.5em);
+    font-size: clamp(24px, 1.5em, 1.25em);
 }
 
 .p-subheading{

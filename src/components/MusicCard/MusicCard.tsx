@@ -28,9 +28,9 @@ export const MusicCard: React.FC<MusicCardProps> = ({
       <a href={href} target="_blank" rel="noopener noreferrer" className="flex flex-col gap-2 w-full " data-cursor={cursorTitle}>
         <CustomImage imgSrc={imgSrc} imgAlt={imgAlt} classname="h-[500px] lg:h-[calc(100vh-6rem)]" width={width} height={height}/>
         <div className="flex font-medium justify-between">
-          <p className=" lg:w-[350px] text-xl" style={{ fontSize: "clamp(24px, 32px, 64px)" }}
+          <p className=" lg:w-[350px] text-xl font-black uppercase p-heading" 
             >{title}</p>
-          <p className="hidden lg:block text-xl text-secondary" style={{ fontSize: "clamp(24px, 32px, 64px)" }}>{year}</p>
+          <p className="hidden lg:block text-xl font-black uppercase p-heading" >{year}</p>
          </div>
       </a>
   );

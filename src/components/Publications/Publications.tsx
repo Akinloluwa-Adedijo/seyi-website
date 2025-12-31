@@ -4,7 +4,7 @@ import CustomImage from "../../components/CustomImage/CustomImage";
 
 export const PublicationCard = ({ publication }: { publication: publicationItem }) => {
   return (
-    <a href={publication.href} target="_blank" rel="noopener noreferrer" className="flex flex-col gap-3 p-2 border-2 border-transparent hover:scale-105 hover:border-accent transition-all duration-300 ease-out">
+    <a href={publication.href} target="_blank" rel="noopener noreferrer" className="flex flex-col gap-3 hover:scale-105 transition-all duration-300 ease-out">
           <CustomImage imgSrc={publication.imgSrc} imgAlt={publication.imgAlt} classname="h-[500px] object-cover" width={publication.imgWidth} height={publication.imgHeight} />
 
           <div className="flex flex-col gap-1">

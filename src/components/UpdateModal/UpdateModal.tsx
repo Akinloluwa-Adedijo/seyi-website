@@ -54,7 +54,7 @@ const UpdateModal = ({ isOpen, onClose, updateItem }: UpdateModalProps) => {
             animate={{ x: "0%" }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.4, ease: bezier }}
-            className="fixed bg-yellow-300 w-full max-w-2xl flex flex-col overflow-hidden z-100 p-5 text-black h-full top-0 right-0 md:h-auto md:top-5 md:bottom-5 md:right-5 rounded-3xl"
+            className="fixed bg-yellow-300 w-full max-w-2xl flex flex-col overflow-hidden z-100 p-5 text-black h-full top-0 right-0 md:h-auto md:top-5 md:bottom-5 md:right-5 md:rounded-3xl"
           >
             <div className="flex-none">
               <button
@@ -68,14 +68,14 @@ const UpdateModal = ({ isOpen, onClose, updateItem }: UpdateModalProps) => {
 
             {/* content */}
             <div
-              className="flex-1 overflow-y-auto py-10 disable-scrollbars"
+              className="flex-1 overflow-y-auto py-10 modal-content"
               data-lenis-prevent
             >
               <div className="py-8">
-                <p className="text-4xl sm:text-7xl uppercase font-black py-2">
+                <p className="text-4xl sm:text-7xl font-instrument py-2">
                   {updateItem.title}
                 </p>
-                <p>{updateItem.content}</p>
+                <p className="p-subheading">{updateItem.content}</p>
               </div>
               <div className="flex flex-col gap-5">
                 {updateItem.images?.map((img, index) => {
@@ -86,7 +86,7 @@ const UpdateModal = ({ isOpen, onClose, updateItem }: UpdateModalProps) => {
                       imgAlt={img.imgAlt}
                       width={img.imgWidth}
                       height={img.imgHeight}
-                      classname={`${img.imgClassname} min-h-[95vh]`}
+                      classname={`rounded-3xl h-[500px] lg:h-[95vh]`}
                     />
                   );
                 })}
@@ -97,9 +97,9 @@ const UpdateModal = ({ isOpen, onClose, updateItem }: UpdateModalProps) => {
                     href={updateItem.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-3xl underline hover:text-white hover:no-underline"
+                    className="text-3xl underline  hover:no-underline"
                   >
-                    Visit the Link
+                    Stream GODOT
                   </a>
                 </div>
               )}

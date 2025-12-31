@@ -76,7 +76,6 @@ const Music = () => {
             imgAlt={item.imgAlt}
             href={item.href}
             linkTitle={item.linkTitle}
-            // className={"aspect-square"}
           />
         ))}
       </div>

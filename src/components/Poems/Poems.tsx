@@ -34,10 +34,10 @@ const Poems = ({ onItemClick, poem }: MusicReviewsProps) => {
       onMouseLeave={animateOut}
       onClick={() => onItemClick(poem)}
     >
-      <li className="z-10">{poem.name}</li>
-      <li className="z-10">{poem.theme}</li>
-      <li className="z-10">{poem.released}</li>
-      <li className="hidden sm:block sm:text-right read-text z-10">
+      <li className="z-10 p-heading">{poem.name}</li>
+      <li className="z-10 p-heading">{poem.theme}</li>
+      <li className="z-10 p-heading">{poem.released}</li>
+      <li className="hidden sm:block sm:text-right read-text p-heading z-10">
         Read Poem
       </li>
       <div className="background background-outer pointer-events-none" ref={outer}></div>

@@ -17,7 +17,6 @@ export interface UpdateItem {
     imgAlt: string;
     imgWidth: number;
     imgHeight: number;
-    imgClassname: string;
   }[];
   content: string[];
   href?: string;

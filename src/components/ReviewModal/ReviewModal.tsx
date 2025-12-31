@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import type { ReviewItem } from "../Offstage";
 import CustomImage from "../CustomImage/CustomImage";
 import type { musicReviewItem } from "../../data/musicReviews";
 import type { poemItem } from "../../data/poems";
@@ -40,7 +39,7 @@ const ReviewModal = ({ isOpen, onClose, item }: ReviewModalProps) => {
   return (
     <AnimatePresence>
       {isOpen && item && (
-        <section className="fixed inset-0 z-25 overflow-hidden flex justify-end">
+        <section className="fixed inset-0 z-25 flex justify-end">
           {/* backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -57,7 +56,7 @@ const ReviewModal = ({ isOpen, onClose, item }: ReviewModalProps) => {
             animate={{ x: "0%" }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.4, ease: bezier }}
-            className="fixed bg-accent w-full max-w-2xl flex flex-col overflow-hidden z-100 p-5 text-fg h-full top-0 right-0 md:h-auto md:top-5 md:bottom-5 md:right-5 rounded-3xl"
+            className="fixed bg-accent w-full max-w-2xl flex flex-col z-100 p-5 text-fg h-full top-0 right-0 md:h-auto md:top-5 md:bottom-5 md:right-5 md:rounded-3xl"
           >
             <div className="flex-none">
               <button
@@ -71,7 +70,7 @@ const ReviewModal = ({ isOpen, onClose, item }: ReviewModalProps) => {
 
             {/* content */}
             <div
-              className="flex-1 overflow-y-auto py-10 disable-scrollbars"
+              className="flex-1 overflow-y-auto py-10 modal-content"
               data-lenis-prevent
             >
               <div className="py-8">
@@ -95,12 +94,12 @@ const ReviewModal = ({ isOpen, onClose, item }: ReviewModalProps) => {
                             imgAlt={it.imgAlt ?? ""}
                             width={it.width ?? 0}
                             height={it.height ?? 0}
-                            classname={it.classname}
+                            classname={`h-[500px] ${it.classname}`}
                           />
 
                           {it.text.map((text, index) => {
                             return (
-                              <p key={index} className="py-2 font-medium">
+                              <p key={index} className="py-2 font-medium p-subheading">
                                 {text}
                               </p>
                             );
@@ -117,7 +116,7 @@ const ReviewModal = ({ isOpen, onClose, item }: ReviewModalProps) => {
                           <div key={index}>
                             {it.text.map((text, index) => {
                               return (
-                                <p key={index} className="py-2 font-medium">
+                                <p key={index} className="py-2 font-medium p-subheading">
                                   {text}
                                 </p>
                               );
