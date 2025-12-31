@@ -4,10 +4,13 @@ import { navLinks, footerLinks } from "../../data/navData";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
+import { useLenis } from "../../contexts/LenisContext";
 
 gsap.registerPlugin(useGSAP);
 
 const Header = () => {
+    const { lenis } = useLenis();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuOverlayRef = useRef<HTMLDivElement>(null);
@@ -67,8 +70,12 @@ const Header = () => {
     if (tl.current) {
       if (isMenuOpen) {
         tl.current.play();
-      } else {
+        lenis?.stop();
+        document.body.style.overflow = "hidden";
+        } else {
         tl.current.reverse();
+        lenis?.start();
+        document.body.style.overflow = "";
       }
     }
   }, [isMenuOpen]);

@@ -9,6 +9,7 @@ import useDocumentTitle from "../../utils/useDocumentTitle.js";
 import { Link } from "react-router-dom";
 import { musicItems } from "../Music/Music";
 
+
 const Home = () => {
   useDocumentTitle("Ṣèyí,ThePoet | Artist");
   const homeRef = useRef<HTMLDivElement>(null);
@@ -22,7 +23,7 @@ const Home = () => {
     >
       <LandingPage />
       <Description />
-      <section className="flex flex-col gap-5 w-full pt-20 p-5">
+      <section className="flex flex-col gap-10 w-full pt-20 p-5">
         <h2 className="font-instrument text-5xl md:text-7xl lg:text-8xl italic">
           Music
         </h2>
@@ -40,15 +41,14 @@ const Home = () => {
             height={music.imgHeight}
             href={music.href}
             linkTitle={music.linkTitle}
-            className="w-full h-[500px] lg:min-h-screen"
           />
           );
           }
         })}
       </section>
       <section className="w-full flex flex-col gap-10 p-5 pb-20">
-        <div className="flex items-end justify-between">
-          <h2 className="font-instrument text-5xl md:text-7xl lg:text-8xl italic">
+        <div className="flex flex-col gap-5 lg:flex-row lg:justify-between lg:items-end">
+          <h2 className="font-instrument  italic">
             In the Press
           </h2>
           <Link to="/press">See More</Link>

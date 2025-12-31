@@ -1,17 +1,18 @@
 import { publications }  from "../../data/publications";
 import type { publicationItem } from "../../data/types";
+import CustomImage from "../../components/CustomImage/CustomImage";
 
 export const PublicationCard = ({ publication }: { publication: publicationItem }) => {
   return (
-    <a href={publication.href} target="_blank" rel="noopener noreferrer" className="flex flex-col gap-3 p-2 border-2 border-fg hover:scale-105 hover:border-accent transition-all duration-300 ease-out">
-          <img src={publication.imgSrc} alt={publication.imgAlt} className=" w-full object-cover aspect-square" />
-        <div className="flex flex-col gap-1 text-xl">
-          <div>
-            <p className="font-black uppercase">{publication.title}</p>
-            {/* PLACEHOLDER FOR ARROW ICON */}
+    <a href={publication.href} target="_blank" rel="noopener noreferrer" className="flex flex-col gap-3 p-2 border-2 border-transparent hover:scale-105 hover:border-accent transition-all duration-300 ease-out">
+          <CustomImage imgSrc={publication.imgSrc} imgAlt={publication.imgAlt} classname="h-[500px] object-cover" width={publication.imgWidth} height={publication.imgHeight} />
+
+          <div className="flex flex-col gap-1">
+            <div>
+              <p className="font-black uppercase p-heading">{publication.title}</p>
+            </div>
+            <p className="p-subheading">{publication.description}</p>
           </div>
-          <p>{publication.description}</p>
-        </div>
     </a>
   );
 };
