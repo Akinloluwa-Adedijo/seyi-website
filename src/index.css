@@ -48,6 +48,9 @@
   --color-bg:oklch(0.983 0.0195 87.51);
   --color-accent: oklch(0.83 0.1532 81.16);
   --color-secondary: oklch(0.4419 0.0146 285.79);
+
+  --color-accent-1: oklch(0.9521 0.0535 88.36);
+  --color-accent-2: oklch(0.9019 0.1056 87.86);
 }
 
 body {

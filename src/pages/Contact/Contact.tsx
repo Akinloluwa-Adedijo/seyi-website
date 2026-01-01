@@ -1,6 +1,6 @@
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import ContactForm from "../../components/ContactForm/ContactForm";
 import useDocumentTitle from "../../utils/useDocumentTitle";
+import ContactForm from "../../components/ContactForm/ContactForm";
 const Contact = () => {
   useDocumentTitle("Ṣèyí,ThePoet | Contact");
   return (

@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 type SectionWrapperProps = {
   title: string;
   children: React.ReactNode;
+  type?: "default" | "contact";
 };
 
 const opacity = {
@@ -16,7 +17,7 @@ const opacity = {
   },
 };
 
-const SectionWrapper = ({ title, children }: SectionWrapperProps) => {
+const SectionWrapper = ({ title, children, type = "default" }: SectionWrapperProps) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const inView = useInView(sectionRef, {
     once: true,
@@ -25,12 +26,12 @@ const SectionWrapper = ({ title, children }: SectionWrapperProps) => {
     <main className="py-30">
       <motion.section
         ref={sectionRef}
-        className="flex flex-col items-start gap-10 p-5 overflow-hidden"
+        className= {type === "contact" ? "flex flex-col lg:flex-row items-start gap-10 p-5 overflow-hidden" : "flex flex-col items-start gap-10 p-5 overflow-hidden"}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         variants={opacity}
       >
-        <h2 className=" font-instrument text-4xl sm:text-[10vw] text-fg">
+        <h2 className= {type === "contact" ? "w-full font-instrument text-fg" : "font-instrument text-fg"}>
           {title}
         </h2>
 
